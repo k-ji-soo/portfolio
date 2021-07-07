@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f8911dc87e4b0f45936156d35d887c75"></script>
+	<script src="js/index.js"></script>
+</head>
+<body>
+	<div id="wrap"> 
+		<div id="header"> 
+			<div class="container">
+				<div class="top">
+					<div class="top_header">
+						<p><a href="#" title="서울특별시 홈페이지"></a></p>
+						<dl class="seoul_news">
+							<dt><a href="#" title="서울소식"></a></dt>
+							<dd><a href="#">2021 서울시민회의 참여시민 모집</a></dd>
+						</dl>
+						<dl class="news_list">
+							<dt></dt>
+							<dd><a href="#">서울소식</a></dd>
+							<dd><a href="#">응답소</a></dd>
+							<dd><a href="#">정보공개</a></dd>
+							<dd><a href="#">분야별정보</a></dd>
+						</dl>
+					</div> <!-- class="top_header" -->
+				</div> <!-- class="top" -->
+			</div> <!-- class="container" -->
+			<div class="menu">
+				<div class="bottom_header">
+					<div class="gnb">
+						<div class="nav">
+							<h1 class="visitseoullogo"><a href="index.html"><img src="img/logo.png" alt="visitseoullogo"/></a></h1>
+							<div class="sub_list">
+								<a href="../project/sub/culture.html">지금의 서울
+									<span class="line"></span>
+									<i class="ion-ios-arrow-down"></i>
+								</a>
+								<!-- 2depth -->
+								<div class="gnb_inner">
+									<div class="gnb_sub_title">
+										<p class="large-text">지금의 서울</p>
+										<p class="small-text"></p>
+									</div>
+									<ul class="depth-2">
+										<li><a href="#">이벤트</a></li>
+										<li><a href="#">축제&행사</a></li>
+										<li><a href="#">전시</a></li>
+										<li><a href="#">공연</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sub_list">
+								<a href="../project/sub/seoulonepluspass.html">추천
+									<span class="line"></span>
+									<i class="ion-ios-arrow-down"></i>
+								</a>
+								<!-- 2depth -->
+								<div class="gnb_inner">
+									<div class="gnb_sub_title">
+										<p class="large-text">추천</p>
+										<p class="small-text">VISIT SEOUL에서 추천하는<br/>다양한 경험</p>
+									</div>
+									<ul class="depth-2">
+										<li><a href="#">에디터 추천 여행</a></li>
+										<li><a href="#">서울관광 추천 테마코스</a></li>
+										<li><a href="#">서울시티투어버스</a></li>
+										<li><a href="#">한류관광</a></li>
+										<li><a href="#">원 모어 트립(ONE MORE TRIP)</a></li>
+										<li><a href="#">서울ONE+패스</a></li>
+										<li><a href="#">서울의료관광</a></li>
+										<li><a href="#">서울로 7017 여행자 터미널</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sub_list">
+								<a href="#">여행지
+									<span class="line"></span>
+									<i class="ion-ios-arrow-down"></i>
+								</a>
+								<!-- 2depth -->
+								<div class="gnb_inner">
+									<div class="gnb_sub_title">
+										<p class="large-text">여행지</p>
+										<p class="small-text">다양한 테마의 서울 여행</p>
+									</div>
+									<ul class="depth-2">
+										<li><a href="#">명소</a></li>
+										<li><a href="#">자연&관광</a></li>
+										<li><a href="#">쇼핑</a></li>
+										<li><a href="#">음식</a></li>
+										<li><a href="#">호텔</a></li>
+										<li><a href="#">게스트하우스</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sub_list">
+								<a href="#">지역
+									<span class="line"></span>
+									<i class="ion-ios-arrow-down"></i>
+								</a>
+								<!-- 2depth -->
+								<div class="gnb_inner">
+									<div class="gnb_sub_title">
+										<p class="large-text">지역</p>
+										<p class="small-text">지역별로 구성된<br/>스마트한 관광정보</p>
+									</div>
+									<ul class="depth-2">
+										<li class="map1"><a href="#">광화문</a></li>
+										<li class="map2"><a href="#">명동</a></li>
+										<li><a href="#">동대문</a></li>
+										<li><a href="#">홍대</a></li>
+										<li><a href="#">여의도</a></li>
+										<li><a href="#">이태원</a></li>
+										<li><a href="#">강남</a></li>
+										<li><a href="#">잠실</a></li>
+										<li><a href="#">기타</a></li>
+									</ul>
+									<div class="gnb-right-img">
+										<div class="map-img"></div>
+									</div>
+								</div>
+							</div>
+							<div class="sub_list">
+								<a href="../project/sub/weather.html">여행정보
+									<span class="line"></span>
+									<i class="ion-ios-arrow-down"></i>
+								</a>
+								<!-- 2depth -->
+								<div class="gnb_inner">
+									<div class="gnb_sub_title">
+										<p class="large-text">여행정보</p>
+										<p class="small-text">서울 여행에 대한 <br/>기본 정보를 한눈에</p>
+									</div>
+									<ul class="depth-2">
+										<li><a href="#">가이드북&지도</a></li>
+										<li><a href="#">교통</a></li>
+										<li><a href="#">서울의 날씨</a></li>
+										<li><a href="#">서울의 계절</a></li>
+										<li><a href="#">지역 관광정보</a></li>
+										<li><a href="#">서울다누림관광</a></li>
+										<li><a href="#">여행자 지원</a></li>
+									</ul>
+								</div>
+							</div>
+						</div> <!-- class="nav" -->
+						<div class="quick_rt">
+							<div class="quick_fr">
+								<a href="#"><span class="icon1"><img src="img/nav_search.png" alt="search"/></span></a>
+								<a href="#"><span class="icon2"><img src="img/icon_login.png" alt="login"/></span></a>
+								<a href="#"><span class="family_site">Family Site</span><i class="fas fa-chevron-down"></i></a>
+								<a href="#"><span class="lang">한국어</span><i class="fas fa-chevron-down"></i></a>
+							</div>
+						</div>
+					</div> <!-- class="gnb" -->
+				</div> <!-- class="bottom_header" -->
+			</div><!-- class="menu" -->
+		</div> <!-- id="header" -->
+		<div id="banner"> <!-- 메인배너 -->
+			<div class="main_banner">
+				<div class="container">
+					<div class="slide">
+						<ul class="slides">
+							<li class="slide01"><a href="#" class="ir_pm">배너이미지1</a></li>
+							<li class="slide02"><a href="#" class="ir_pm">배너이미지2</a></li>
+							<li class="slide03"><a href="#" class="ir_pm">배너이미지3</a></li>
+						</ul>
+					</div>
+					<div class="text">
+						<h2>See You in SEOUL</h2>
+						<p>서울에서 만나요</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contents"> <!-- 봄맞이 서울 -->
+			<div class="content1">
+				<div class="container">
+					<div class="sec_box1">
+						<h2>봄맞이 서울</h2>
+						<div class="sec_tit">
+							<ul class="inner_list">
+								<li><a href="#" title="서울 나들이">서울 나들이</a></li>
+								<li><a href="#" title="숨은 서울 찾기">숨은 서울 찾기</a></li>
+								<li><a href="#" title="한류 in 서울">한류 in 서울</a></li>
+							</ul>
+						</div>
+						<div class="sec_main_box">
+							<div class="sec_main_box1">
+								<div class="sec_main_img">
+									<a href="#"><img src="img/sec1_art1.png" alt="서울 근교 여행"/></a>
+								</div>
+								<div class="sec_main_text">
+									<h3>서울 근교 여행</h3>
+									<p>대중교통 타고 떠나보는 서울 근교 여행</p>
+								</div>
+							</div>
+							<div class="sec_main_box2">
+								<div class="sec_main_img">
+									<a href="#"><img src="img/sec1_art2.png" alt="서울 근교 여행"/></a>
+								</div>
+								<div class="sec_main_text">
+									<h3>서울 차박 여행</h3>
+									<p>안전하게 떠나보는 서울 자동차 여행</p>
+								</div>
+							</div>
+							<div class="sec_main_box3">
+								<div class="sec_main_img">
+									<a href="#"><img src="img/sec1_art3.png" alt="서울 근교 여행"/></a>
+								</div>
+								<div class="sec_main_text">
+									<h3>서울 공원 TOP5</h3>
+									<p>한적하게 둘러볼 수 있는 서울의 공원</p>
+								</div>
+							</div>
+						</div> <!-- class="sec_main_box" -->
+						
+						<!-- 미니배너 -->
+						<div class="sec_box2">
+							<div class="sec_main_box4">
+								<ul class="sec_slide">
+									<li class="s-slide01"><a href="#" class="ir_pm">배너1</a></li>
+									<li class="s-slide02"><a href="#" class="ir_pm">배너2</a></li>
+								</ul>
+								<div class="banner_btn">
+									<div class="pre_btn"><img src="img/icon_pre.png" alt=""/></div>
+									<div class="next_btn"><img src="img/icon_next.png" alt=""/></div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- class="sec_box1" -->
+				</div> <!-- class="container"  -->
+			</div> <!-- class="content1"  -->
+			
+			<div class="content2"> <!-- 서울 나들이 명소 TOP5 -->
+				<div class="container">
+					<div class="pic5_box">
+					<h2>서울 나들이 명소 TOP5</h2>
+						<div class="pic5_list">
+							<div class="pic_box1">
+								<div class="pic_top1">
+									<a href="#"><img src="img/sec2_art1.png" alt="삼청동 골목길"/></a>
+								</div>
+								<div class="pic_text">
+									<h3 class="pictext_tit1">삼청동 골목길</h3>
+									<span class="pictextImg1"><img src="img/sec2_1.png" alt="명소1"/></span>
+									<h4 class="pictext_sub1">서울에서 가장 스타일리시한 골목</h4>
+								</div>
+							</div>
+							<div class="pic_box2">
+								<div class="pic_top2">
+									<a href="#"><img src="img/sec2_art2.png" alt="서울숲"/></a>
+								</div>
+								<div class="pic_text">
+									<h3 class="pictext_tit2">서울숲</h3>
+									<span class="pictextImg2"><img src="img/sec2_2.png" alt="명소2"/></span>
+									<h4 class="pictext_sub2">서울의 숲을 잇는 '자연의 거점'</h4>
+								</div>
+							</div>
+							<div class="pic_box3">
+								<div class="pic_top3">
+									<a href="#"><img src="img/sec2_art3.png" alt="세빛섬" width="370" height="310"/></a>
+								</div>
+								<div class="pic_text">
+									<h3 class="pictext_tit3">세빛섬</h3>
+									<span class="pictextImg3"><img src="img/sec2_3.png" alt="명소3"/></span>
+									<h4 class="pictext_sub3">한강을 아름답게 밝혀주는 세 개의 빛나는 섬</h4>
+								</div>
+							</div>
+							<div class="pic_box4">
+								<div class="pic_top4">
+									<a href="#"><img src="img/sec2_art4.png" alt="하늘공원" width="370" height="310"/></a>
+								</div>
+								<div class="pic_text">
+									<h3 class="pictext_tit3">하늘공원</h3>
+									<span class="pictextImg3"><img src="img/sec2_4.png" alt="명소4"/></span>
+									<h4 class="pictext_sub3">월드컵경기장 일대 5대 공원</h4>
+								</div>
+							</div>
+							<div class="pic_box5">
+								<div class="pic_top5">
+									<a href="#"><img src="img/sec2_art5.png" alt="메타세쿼이아 숲길" width="370" height="310"/></a>
+								</div>
+								<div class="pic_text">
+									<h3 class="pictext_tit3">메타세쿼이아 숲길</h3>
+									<span class="pictextImg3"><img src="img/sec2_5.png" alt="명소5"/></span>
+									<h4 class="pictext_sub3">나무가 울창한 숲길</h4>
+								</div>
+							</div>
+						</div> <!-- class="pic5_list" -->
+					</div> <!-- class="pic5_box" -->
+				</div> <!-- class="container" -->
+			</div> <!-- class="content2" -->
+         
+			<div class="content3"> <!-- 축제 행사 -->
+					<div class="con_fest">
+						<h2>축제&amp;행사</h2>
+							<div class="fest_box">
+								<div class="fest">
+									<a href="#"><img src="img/sec3_art8.jpg" alt="축제1"/></a>
+									<div class="fest_text">
+										<h3><span>[전시]</span>공원의 기록을 발굴하다</h3>
+										<p>2020.11.10~2021.05.06</p>
+									</div>
+								</div>
+								<div class="fest">
+									<a href="#"><img src="img/sec3_art2.png" alt="축제2"/></a>
+									<div class="fest_text">
+										<h3><span>[전시]</span>서울학교 100년</h3>
+										<p>2020.11.26~2021.03.07</p>
+									</div>
+								</div>
+								<div class="fest">
+									<a href="#"><img src="img/sec3_art3.png" alt="축제3"/></a>
+									<div class="fest_text">
+										<h3><span>[전시]</span>한양의 家, 견평방 가옥</h3>
+										<p>2020.11.01~2021.05.02</p>
+									</div>
+								</div>
+								 <div class="fest">
+									<a href="#"><img src="img/sec3_art4.png" alt="축제4"/></a>
+									<div class="fest_text">
+										<h3><span>[전시]</span>팀랩:라이프</h3>
+										<p>2020.12.18~2021.06.30</p>
+									</div>
+								</div>
+								<div class="fest">
+									<a href="#"><img src="img/sec3_art5.jpg" alt="축제5"/></a>
+									<div class="fest_text">
+										<h3><span>[전시]</span>굿즈모아선물의집</h3>
+										<p>2020.11.01~2021.05.02</p>
+									</div>
+								</div>
+								<div class="fest">
+									<a href="#"><img src="img/sec3_art7.jpg" alt="축제5"/></a>
+									<div class="fest_text">
+										<h3><span>[전시]</span>ㄱ의 순간</h3>
+										<p>2020.11.12~2021.02.28</p>
+									</div>
+								</div>
+								<div class="fest">
+									<a href="#"><img src="img/sec3_art9.jpg" alt="축제5"/></a>
+									<div class="fest_text">
+										<h3><span>[행사]</span>뮤지컬 몬테크리스토</h3>
+										<p>2020.11.12~2021.10.28</p>
+									</div>
+								</div>
+							</div> <!-- class="fest_box" -->
+					</div> <!-- class="con_fest" -->
+			</div> <!-- class="content3" -->
+		 
+			<div class="content4"> <!-- 서울 구석구석 핫플 -->
+				<div class="container">
+					<div class="hot_box">
+						<h2>서울 구석구석 핫플!</h2>
+						<div class="hot_tit">
+							<ul class="hot_tit_list">
+								<li><a href="#" title="여의도">여의도</a></li>
+								<li><a href="#" title="이태원">이태원</a></li>
+								<li><a href="#" title="광화문">광화문</a></li>
+								<li><a href="#" title="잠실">잠실</a></li>
+								<li><a href="#" title="동대문">동대문</a></li>
+							</ul>
+						</div>
+						<div class="hot_map">
+							<img src="img/sec4_p1.png" alt="여의도 지도"/>
+						</div>
+						<div class="hot_img">
+							<div class="hot_box1">
+								<div class="hot_image"><img src="img/sec4_1_art1.png" alt="한강예술공원" width="274" height="180" /></div>
+								<div class="hot_text">
+									<h3>한강예술공원</h3>
+									<p>한강예술공원은 한강을 문화예술적 관점에서 재해석해 37개의 공공 예술 작품을 즐길 수 있도록 한 체험형 예술 쉼터입니다.</p>
+								</div>
+							</div>
+							<div class="hot_box2">
+								<div class="hot_image"><img src="img/sec4_1_art2.jpg" alt="국회의사당" width="274" height="180"/></div>
+								<div class="hot_text">
+									<h3>국회의사당</h3>
+									<p>여의도에 위치한 국회의사당은 한국의 민주주의와 인권을 상징하는 건물이다.</p>
+								</div>
+							</div>
+							<div class="hot_box3">
+								<div class="hot_image"><img src="img/sec4_1_art3.jpg" alt="여의도샛강생태공원" width="274" height="180"/></div>
+								<div class="hot_text">
+									<h3>여의도샛강생태공원</h3>
+									<p>여의도 샛강 생태공원은 생태계 보전을 위해 마련된 국내 최초의 생태공원이다.</p>
+								</div>
+							</div>
+							<div class="hot_box4">
+								<div class="hot_image"><img src="img/sec4_1_art4.jpg" alt="63스퀘어" width="274" height="180"/></div>
+								<div class="hot_text">
+									<h3>63스퀘어</h3>
+									<p>여의도 63빌딩은 볼거리, 먹을거리, 즐길거리 등을 갖춘 복합 공간이다.</p>
+								</div>
+							</div>
+						</div> <!-- class="hot_img" -->
+					</div> <!-- class="hot_box" -->
+					<div class="hot_box_2">
+						<div class="hot_banner">
+							<div class="banner1">
+								<div class="hot_banner_text">
+									<h3>가이드북&지도</h3>
+									<a href="#"><span>자세히 보기</span></a>
+								</div>
+								<a href="#"><img src="img/sec5_art1.png" alt="가이드북&지도배너"/></a>
+							</div>
+							<div class="banner2">
+								<div class="hot_banner_text">
+									<h3>도보해설관광</h3>
+									<a href="#"><span>자세히 보기</span></a>
+								</div>
+								<a href="#"><img src="img/sec5_art2.png" alt="도보해설관광배너" /></a>
+							</div>
+							<div class="banner3">
+								<div class="hot_banner_text">
+									<h3>시티투어버스</h3>
+									<a href="#"><span>자세히 보기</span></a>
+								</div>
+								<a href="#"><img src="img/sec5_art3.png" alt="시티투어버스배너" /></a>
+							</div>
+							<div class="banner4">
+								<div class="hot_banner_text">
+									<h3>응급의료서비스</h3>
+									<a href="#"><span>자세히 보기</span></a>
+								</div>
+								<a href="#"><img src="img/sec5_art4.png" alt="응급의료서비스배너" /></a>
+							</div>
+						</div> <!-- class="hot_banner" -->
+					</div> <!-- class="hot_box_2" -->
+				</div> <!-- class="container" -->
+			</div> <!-- class="content4" -->
+		 
+			<div class="content5"> <!-- 유튜브 영상 -->
+				<div class="container">
+					<div class="vidio">
+						<h2>VisitSeoul TV</h2>
+						<div class="vidio_box"> <!-- 전체 비디오 박스 -->
+							<div class="youtube1">
+								<div class="videoBox"> <!-- 각 비디오 박스 -->
+									<iframe width="583" height="328" src="https://www.youtube.com/embed/m3skDEQc2SI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="videoTextbox">
+									<h3>서울의 감동적인 모습</h3>
+									<p>Feel the Impact of Seoul</p>
+									<span class="view">45,692 </span>
+									<span class="heart">48</span>
+								</div>
+							</div>
+							<div class="youtube2">
+								<div class="videoBox">
+									<iframe width="583" height="328" src="https://www.youtube.com/embed/CiHGdRMEIIo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="videoTextbox">
+									<h3>강동구 길동생태공원과 광진교</h3>
+									<p>Cinematic Seoul</p>
+									<span class="view">427 </span>
+									<span class="heart">94</span>
+								</div>
+							</div>
+							<div class="youtube3">
+								<div class="videoBox">
+									<iframe width="583" height="328" src="https://www.youtube.com/embed/XiQwrYOMmeM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="videoTextbox">
+									<h3>OH MY GIRL’s choices for Seoul travel!</h3>
+									<p>SEOUL CONNECTS U</p>
+									<span class="view">10,006 </span>
+									<span class="heart">98</span>
+								</div>
+							</div>
+							<div class="youtube4">
+								<div class="videoBox">
+									<iframe width="583" height="328" src="https://www.youtube.com/embed/dRBtaUgSf2M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="videoTextbox">
+									<h3>Old & Historical Store in SEOUL</h3>
+									<p>Visit Seoul</p>
+									<span class="view">70,028</span>
+									<span class="heart">202</span>
+								</div>
+							</div>
+						</div> <!-- class="vidio_box" -->
+					</div> <!-- class="vidio" -->
+				</div> <!-- class="container" -->
+			</div> <!-- class="content5" -->
+			<div class="content6">
+				<div class="container">
+					<div class="map">
+						<h2>찾아오시는 길</h2>
+						<div id="map" style="width:100%;height:350px;"></div>
+						<script>
+							var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+								mapOption = { 
+									center: new kakao.maps.LatLng(37.267743, 127.006865), // 지도의 중심좌표(구글맵에서 찾아서 붙여넣기)
+									level: 3 // 지도의 확대 레벨
+								};
+
+							var map = new kakao.maps.Map(mapContainer, mapOption);
+
+							// 마커가 표시될 위치입니다 (구글맵에서 찾아서 붙여넣기)
+							var markerPosition  = new kakao.maps.LatLng(37.267743, 127.006865);
+
+							// 마커를 생성합니다
+							var marker = new kakao.maps.Marker({
+								position: markerPosition
+							});
+
+							// 마커가 지도 위에 표시되도록 설정합니다
+							marker.setMap(map);
+
+							var iwContent = '<div style="padding:5px;">다산플라자 3층 더휴먼 아카데미 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+								iwPosition = new kakao.maps.LatLng(37.267743, 127.006865); //인포윈도우 표시 위치입니다(구글맵에서 찾아서 붙여넣기)
+
+							// 인포윈도우를 생성합니다
+							var infowindow = new kakao.maps.InfoWindow({
+								position : iwPosition, 
+								content : iwContent 
+							});
+							  
+							// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+							infowindow.open(map, marker); 
+						</script>
+					</div>
+				</div>
+			</div>
+		</div> <!-- id="contents" -->
+		
+		<div id="footer"> 
+				<div class="footer-top">
+					<div class="footer_in">
+						<ul class="top_list">
+							<li class="ft_list1">
+								<div class="icon_wrap">
+									<span class="ft_ico"><img src="img/icon_sun.png" alt="서울의 날씨정보"/></span>
+									<div class="list_text">
+										<div class="list_tit">
+											<a href="#">서울의 날씨정보</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="ft_list2">
+								<div class="icon_wrap">
+									<span class="ft_ico"><img src="img/icon_news.png" alt="뉴스레터"/></span>
+									<div class="list_text">
+										<a href="#">뉴스레터</a>
+									</div>
+								</div>
+							</li>
+							<li class="ft_list3">
+								<div class="icon_wrap">
+									<span class="ft_ico"><img src="img/icon_notice.png" alt="공지사항"/></span>
+									<div class="list_text">
+										<a href="#">공지사항</a>
+									</div>
+								</div>
+							</li>
+							<li class="ft_list4">
+								<div class="icon_wrap">
+									<span class="ft_ico"><img src="img/icon_faq.png" alt="FAQ"/></span>
+									<div class="list_text">
+										<a href="#">FAQ</a>
+									</div>
+								</div>
+							</li>
+							<li class="ft_list5">
+								<div class="icon_wrap">
+									<span class="ft_ico"><img src="img/icon_info.png" alt="관광안내소"/></span>
+									<div class="list_text">
+										<a href="#">관광안내소</a>
+									</div>
+								</div>
+							</li>
+						</ul> <!-- class="top_list" -->
+					</div> <!-- class="footer_in" -->
+				</div> <!-- class="footer-top" -->
+				<div class="footer-body">
+					<div class="footer_body1">
+						<ul class="footer_menu">
+							<li class="footer_menu1">
+								<a class="footer_menu1_1" href="#">지금의 서울</a>
+								<ul>
+									<li><a href="#">이벤트</a></li>
+									<li><a href="#">축제&행사</a></li>
+									<li><a href="#">전시</a></li>
+									<li><a href="#">공연</a></li>
+								</ul>
+							</li>
+							<li class="footer_menu1">
+								<a class="footer_menu1_1" href="#">추천</a>
+								<ul>
+									<li><a href="#">에디터 추천 여행</a></li>
+									<li><a href="#">서울관광 추천 테마코스</a></li>
+									<li><a href="#">서울도보해설관광</a></li>
+									<li><a href="#">서울시티투어버스</a></li>
+									<li><a href="#">한류관광</a></li>
+									<li><a href="#">원 모어 트립(ONE MORE TRIP)</a></li>
+									<li><a href="#">서울ONE+패스</a></li>
+									<li><a href="#">서울의료관광</a></li>
+									<li><a href="#">서울로 7017 여행자 터미널</a></li>
+								</ul>
+							</li>
+							<li class="footer_menu1">
+								<a class="footer_menu1_1" href="#">여행지</a>
+								<ul>
+									<li><a href="#">명소</a></li>
+									<li><a href="#">자연&관광</a></li>
+									<li><a href="#">엔터테인먼트</a></li>
+									<li><a href="#">쇼핑</a></li>
+									<li><a href="#">음식</a></li>
+									<li><a href="#">호텔</a></li>
+									<li><a href="#">게스트하우스</a></li>
+								</ul>
+							</li>
+							<li class="footer_menu1">
+								<a class="footer_menu1_1" href="#">지역</a>
+								<ul>
+									<li><a href="#">광화문</a></li>
+									<li><a href="#">명동</a></li>
+									<li><a href="#">동대문</a></li>
+									<li><a href="#">홍대</a></li>
+									<li><a href="#">여의도</a></li>
+									<li><a href="#">이태원</a></li>
+									<li><a href="#">강남</a></li>
+									<li><a href="#">잠실</a></li>
+									<li><a href="#">기타</a></li>
+								</ul>
+							</li>
+							<li class="footer_menu1">
+								<a class="footer_menu1_1" href="#">여행정보</a>
+								<ul>
+									<li><a href="#">가이드북&지도</a></li>
+									<li><a href="#">교통</a></li>
+									<li><a href="#">서울의 날씨</a></li>
+									<li><a href="#">서울의 계절</a></li>
+									<li><a href="#">지역 관광정보</a></li>
+									<li><a href="#">서울다누림관광</a></li>
+									<li><a href="#">여행자 지원</a></li>
+								</ul>
+							</li>
+						</ul> <!-- class="footer_menu" -->
+					</div> <!-- class="footer_body1" -->
+					<div class="footer_body2">
+						<div class="body2_box1">
+							<p class="box1_tit">제공</p>
+							<div class="box1_image">
+								<a class="logo1" href="#"><img src="img/logo_sto.png" alt="서울관광재단"/></a>
+								<a class="logo2" href="#"><img src="img/logo_iseoulu.png" alt="서울특별시 페이지"/></a>
+							</div>
+							<div class="box1_add">
+								<p class="addr">044551, 서울특별시 중구 삼일대로 340 9층</p>
+								<ul class="box1_foot">
+									<li><a href="#">회원약관</a></li>
+									<li><a href="#">개인정보처리방침</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="body2_box2">
+							<div class="box2_1">
+								<p class="box2_1_tit"><a href="#">운영<span class="icon"></span></a></p>
+								<ul class="box2_1_sub">
+									<li>월~금,오전9시~오후6시</li>
+									<li>staff@sto.or.kr</li>
+								</ul>
+								<p class="box2_1_tit"><a href="#">관광불편처리센터<span class="icon"></span></a></p>
+							</div>
+							<div class="box2_2">
+								<p class="box2_2_tit"><a href="#">일반 관광 문의<span class="icon"></span></a></p>
+								<span class="num">1330</span>
+								<p class="box2_2_tit"><a href="#">서울여행리뷰TripAdvisor<span class="icon"></span></a></p>
+							</div>
+						</div>
+						<div class="body2_box3">
+							<div class="box2_3">
+									<p class="box2_3_tit"><a href="#">iTourSeoul 모바일 앱</a></p>
+								<div class="app">
+									<p class="appStore"><a href="#"><img src="img/foot_app.png" alt=""/></a></p>
+									<p class="Google"><a href="#"><img src="img/foot_google.png" alt=""/></a></p>
+								</div>	
+							</div>
+							<div class="box2_4">
+								<ul class="sns_icon">
+									<li><a href="#" title="페이스북"> <img src="img/foot_icon_fb.png" alt="페이스북아이콘"/></a></li>
+									<li><a href="#" title="인스타그램"><img src="img/foot_icon_insta.png" alt="인스타그램아이콘"/></a></li>
+									<li><a href="#" title="유튜브"><img src="img/foot_icon_yt.png" alt="유튜브아이콘"/></a></li>
+									<li><a href="#" title="웨이보"><img src="img/foot_icon_wb.png" alt="웨이보아이콘"/></a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!-- class="footer_body2" -->
+				</div> <!-- class="footer-body" -->
+				<div class="footer-bottom">
+					<div class="footer_in">
+						<ul class="ft_bt_icon">
+							<li class="ft_bt_icon1">
+								<span>
+									<span class="inner">
+										<img src="img/footL_small_logo1.png" alt="logo1"/>
+									</span>
+								</span>
+							</li>
+							<li class="ft_bt_icon2">
+								<span>
+									<span class="inner">
+										<img src="img/footL_small_logo2.png" alt="logo2"/>
+									</span>
+								</span>
+							</li>
+							<li class="ft_bt_icon3">
+								<span>
+									<span class="inner">
+										<img src="img/footL_small_logo3.png" alt="logo3"/>
+									</span>
+								</span>
+							</li>
+							<li class="ft_bt_icon4">
+								<span>
+									<span class="inner">
+										<img src="img/footL_small_logo4.png" alt="logo4"/>
+									</span>
+								</span>
+							</li>
+						</ul> <!-- class="ft_bt_icon" -->
+						<!-- <p class="reserved">© 2021 Seoul Tourism Organization. All rights reserved</p> -->
+						<p class="reserved">© 2021 Seoul Tourism Organization. All rights reserved</p>
+						<ul class="ft_bt_iconR">
+							<li class="ft_bt_iconR1">
+								<span>
+									<span class="inner">
+										<img src="img/footR_small_logo2.png" alt=""/>
+									</span>
+								</span>
+							</li>
+							<li class="ft_bt_iconR2">
+								<span>
+									<span class="inner">
+										<img src="img/footR_small_logo1.png" alt=""/>
+									</span>
+								</span>
+							</li>
+						</ul> <!-- class="ft_bt_iconR" -->
+					</div> <!-- class="footer_in" -->
+				</div> <!-- class="footer-bottom" -->
+		</div><!-- id="footer" end -->
+	</div> <!-- id="wrap" end -->
+</body>
+</html>

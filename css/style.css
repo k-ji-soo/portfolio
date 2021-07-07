@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+/* 배경 */
+body{ 
+	/* background:radial-gradient(200% 100% at bottom center,#F7F7B6,#E96F92,#75517D,#1B2947);  */
+	background:radial-gradient(220% 105% at top center,#1B2947 10%,#75517D 40%,#75517D 65%,#75517D); 
+	/* overflow:hidden; */
+	overflow-y:scroll;
+}
+
+@keyframes rotate{
+	0%{
+		transform:perspective(400px) rotateZ(1deg) rotateX(-40deg) rotateY(0);
+	}
+	
+	100%{
+		transform:perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+	}
+}
+
+.stars{
+	/* transform:perspective(500px); */
+	transform-style:preserve-3d;
+	position:fixed;
+	bottom:0;
+	/* perspective-origin:50% 100%; */
+	left:50%;
+	animation:rotate 90s infinite linear;
+}
+
+.star{
+	width:2px;
+	height:2px;
+	background:#F7F7B6;
+	/* border-radius:100%; */
+	position:absolute;
+	top:0;
+	left:0;
+	transform-origin:0 0 -300px;
+	transform:translate3d(0,0,-300px);
+	/* backface-visibility:hidden; */
+}
+
+/* 전체 레이아웃 */
+#wrap{
+    width:100%;
+}
+
+#header{
+    width:100%;
+    height:100px;
+    position:fixed;
+    top:0;
+    left:0;
+    /* z-index:99; */
+}
+
+#main{
+    height:1080px;
+}
+
+#home{
+    height:1080px;
+}
+
+#about{
+    height:1080px;
+}
+
+#project{
+    height:1700px;
+	margin-bottom:200px;
+}
+
+#contact{
+    height:1080px;
+}
+
+/* 공통속성 */
+.container{
+    width:1554px;
+    margin:0 auto;
+    height:inherit;
+    position:relative;
+    overflow:hidden;
+}
+
+/* 헤더영역 */
+.menu-wrap .m-logo{
+	display:block;
+    margin-top:20px;
+    margin-right:1068px;
+	float:left;
+}
+
+.menu-wrap .m-logo img{
+    width:80px;
+}
+
+.menu-wrap ul{
+    overflow:hidden;
+}
+
+.menu-wrap ul li{
+    float:left;
+    padding:0 14px;
+}
+
+ .menu-wrap ul li.on a{
+    color:#FFB800;
+	font-weight:bold;
+}
+
+.menu-wrap ul li a{
+    display:block;
+    line-height:100px;
+    font-size:1.5em;
+    text-align:center;
+    text-transform:uppercase;
+    color:#fff;
+    position:relative;
+}
+
+.menu-wrap ul li a:after{
+    position:absolute;
+    width:0;
+    display:block;
+    height:2px;
+    content:"";
+    left:50%;
+    bottom:20px;
+    transition:all .3s;
+}
+
+.menu-wrap ul li.on a:after{
+    width:100%;
+    left:0;
+}
+
+/* 메인영역 */
+/* home */
+#home .main-title{
+    text-align:center;
+    line-height:950px;
+    font-size:3em;
+    color:rgb(255, 255, 255);
+}
+
+/* about */
+#about{
+	position:relative;
+}
+
+#about .about-inner .my-img{
+	margin:180px 0 0 120px;
+}
+
+#about .about-inner .my-img img{
+	width:350px;
+	height:350px;
+	display:block;
+	float:left;
+}
+
+/* div 공통 */
+.about-textbox{
+	position:relative;
+}
+
+.about-textbox .about-inner,
+.edu-textbox .edu-inner{
+	/* display:inline; */
+	margin-left:100px;
+	float:left;
+}
+
+.license-textbox .license-inner{
+	display:inline;
+	margin-left:100px;
+	float:left;
+	position:absolute;
+	top:41%;
+	left:30%;
+}
+
+.skill-inner{
+	position:absolute;
+	left:120px;
+	bottom:230px;
+	width:100%;
+}
+
+.edu-textbox .edu-inner{
+	/* margin-right:41px; */
+}
+
+.about-textbox .about-inner h3,
+.edu-textbox .edu-inner h3,
+.license-textbox .license-inner h3{
+	/* display:inline-block; */
+	font-weight:bold;
+	font-size:30px;
+	line-height:49px;
+	color:#fff;
+	text-shadow:4px 3px 0px rgba(0,0,0,0.5);
+	transform:rotate(0.15deg);
+}
+
+.skill-textbox .skill-inner h3{
+	display:inline-block;
+	font-weight:bold;
+	font-size:30px;
+	line-height:49px;
+	color:#fff;
+	text-shadow:4px 3px 0px rgba(0,0,0,0.5);
+	transform:rotate(0.15deg);
+	margin-bottom:20px;
+}
+
+.about-textbox .about-inner p,
+.edu-textbox .edu-inner p,
+.license-textbox .license-inner p{
+	margin-top:20px;
+	font-size:16px;
+	line-height:33px;
+	color:#fff;
+}
+
+.skill-textbox .skill-inner p{
+	color:#fff;
+	font-size:14px;
+	display:inline-block;
+	padding-bottom:5px;
+}
+
+/* skill */
+.skill-textbox{
+	width:100%;
+}
+
+.graph-cont{
+  /* width:100%;
+  margin:0 auto; */
+}
+
+.iconDetail{
+	width:50%;
+	float:left;
+}
+
+.progress_bar {
+	width:500px;
+	height:30px;
+	position:relative;
+	content:'';
+	box-shadow:1px 2px 10px #d0d0d0;
+}
+
+.progress_bar>.bar{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;background:#330066;
+	width:50px;
+	color:#fff;
+	line-height: 28px;
+	padding-left:10px;
+}
+
+.progress_bar>.num{
+	position:absolute;
+	top:4px;
+	right:10px;
+	font-size:14px;
+	color:#fff1f1;
+	line-height:20px;
+}
+
+#project h3,
+#contact h3{
+	text-align:center;
+	margin-top:120px;
+	margin-bottom:50px;
+	font-weight:bold;
+	font-size:30px;
+	line-height:49px;
+	color:#fff;
+	text-shadow:4px 3px 0px rgba(0,0,0,0.5);
+	transform:rotate(0.15deg);
+}
+
+

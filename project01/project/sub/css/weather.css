@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.container{
+	width:1200px;
+	height:auto;
+	margin:0 auto;
+}
+
+/* main banner */
+.main_banner{
+	width:100%;
+	height:674px;
+	background:url(../img/weather_banner.jpg) no-repeat center center/cover;
+	position:relative;
+}
+
+.main_banner .text{
+	position:absolute;
+	top:77%;
+	left:18%;
+	color:#fff;
+}
+
+.main_banner .text h2{
+	font-size:58px;
+	font-weight:700;
+}
+
+.main_banner .text p{
+	font-size:20px;
+	margin-top:18px;
+	font-weight:700;
+	padding-left:4px;
+}
+
+/* location */
+.location{
+	width:100%;
+	max-width:1200px;
+	margin:10px auto 0 auto;
+	padding:10px 0px 20px 15px;
+	font-size:16px;
+	color:#666;
+	background:url(../img/nav_home.png) no-repeat 0px 15px;
+    background-size:auto;
+	background-size:10px 12px;
+	box-sizing:border-box;
+}
+
+.location .ar{
+	padding:10px;
+}
+
+.location span>a{
+	font-weight:700;
+	color:#666;
+}
+
+#contents{
+	height:auto;
+}
+
+/* contents */
+.weather-box .cont-top-tit{
+	border-bottom:1px solid #eaccd4;
+	margin-bottom:25px;
+}
+
+.weather-box .cont-top-tit .tit-txt{
+	border-top:1px solid #eaccd4;
+	border-right:1px solid #eaccd4;
+	border-left:1px solid #eaccd4;
+	display:inline-block;
+	padding:5px 15px;
+	font-weight:bold;
+	font-size:0.9em;
+}
+
+.tb-weather01 .tit-weather{
+	margin-bottom:15px;
+	margin-top:15px;
+}
+
+.tb-weather01 .tit-weather .ico_circle{
+	background:#b50002;
+	width:10px;
+	height:10px;
+	display:inline-block;
+	border-radius:20px;
+	margin-right:5px;
+}
+
+.tb-weather01 tr{
+	line-height:35px;
+	color:#666;
+}
+
+.tb-weather01 tr:nth-child(1){
+	border-top:2px solid #b6022f;
+	border-bottom:1px solid #f7e8eb;
+	background:#fdf4f6;
+	line-height:35px;
+}
+
+.tb-weather01 th{
+	font-size:0.8em;
+	font-weight:500;
+	color:#666;
+	border-right:1px solid #f7e8eb;
+	border-bottom:1px solid #f7e8eb;
+}
+
+.tb-weather01 td{
+	font-size:0.8em;
+	padding:10px 5px;
+	
+	border-right:1px solid #f7e8eb;
+	border-bottom:1px solid #f7e8eb;
+}
+
+.tb-weather01 td>strong{
+	font-weight:500;
+}
+
+.tb-weather01 td img{
+	width:40px;
+	height:40px;
+}
+
+.weather-box p{
+	margin:20px 0 55px 0;
+}
+
+

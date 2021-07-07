@@ -1,0 +1,100 @@
+.guidebook_app_btn {height:134px; overflow: hidden; border-radius: 4px; margin-bottom: 30px; border:3px solid #e4e4e4; background: #f8f8f5 url(../images/content/guidebook.png) 5% 20% no-repeat; background-size: 350px 188px; position: relative;}
+
+.guidebook_app_btn .guidebtn_container{position: absolute; top: 50%; right: 0%; transform: translateY(-50%);}
+.guidebook_app_btn .guidebtn_wrap{position: relative; display: inline-block; margin-right: 50px;}
+
+.guidebook_app_btn span {font-size:28px;font-weight: 400;text-align: center; color:#007dc3; display: block;}
+.guidebook_app_btn span.color{color: #ff6f0f;}
+
+/* 20201203//(Ina)웹접근성_수정(s) */
+/* .guidebook_app_btn a{position: absolute; top: 0; bottom: 0; left: 0; right: 0;} */
+.guidebook_app_btn a{display:inline-block;width:100%;height:auto;} 
+.guidebook_app_btn a:hover {text-decoration: none;}
+/* 20201203//(Ina)웹접근성_수정(e) */
+
+.guidebook_app_btn strong {font-weight: normal; padding:5px 30px; background-color: #007dc3; color:#fff; font-size: 20px; display: block; border:5px solid #f8f8f5;border-radius: 9px; width: 150px; box-sizing: border-box; margin: 5px auto 0 auto;}
+.guidebook_app_btn strong.color{background-color: #ff6f0f;}
+
+@media(max-width:768px){
+    .guidebook_app_btn span{font-size: 3.8vw; background-color: rgba(255, 255, 255, 0.7);}
+    .guidebook_app_btn .guidebtn_container{width: 100%; position: relative;}
+    .guidebook_app_btn .guidebtn_wrap{margin-right: 0; position: absolute; top: 50%; left: 5%; transform: translateY(-50%);}
+    .guidebook_app_btn .guidebtn_wrap.sec {right: 5%; left: auto;}
+    
+}
+
+@media(max-width:480px){
+    .guidebook_app_btn{height: 300px; background-position: bottom;}
+    .guidebook_app_btn span{font-size: 5vw; width: 55vw;}
+    .guidebook_app_btn .guidebtn_container{height: 100%;}
+    .guidebook_app_btn .guidebtn_wrap{top: 12%;left: 50%;right: auto;    transform: translate(-50%, 0);}
+    .guidebook_app_btn .guidebtn_wrap.sec{top: auto; bottom: 12%; right: auto; left: 50%; transform: translate(-50%, 0);}
+}
+
+
+.guidebook_app {position: relative; padding-bottom: 20px;}
+@media (max-width: 640px) {
+	.guidebook_app_btn a {background-size: 350px 188px;background-position: -60px 20%; width:77%; padding-left:23%;}
+}
+.guidebook_app .info-box {background-color: #e5f2f9; color:#007dc3; position: relative; padding:20px 20px 20px 100px;}
+.guidebook_app .info-box-sub{color: #007dc3; padding: 0 0 0 100px; margin-top: 20px;}
+.guidebook_app .info-box-center{color: #007dc3; text-align: center; font-size: 16px; margin-top: 85px; font-weight: 700;}
+@media(max-width:768px){
+    .guidebook_app .info-box-sub{color: #007dc3; padding: 0 0 0 30px;}
+}
+.guidebook_app .info-box:before {content:""; position: absolute; left:30px; width:45px; height:45px; background: url(../images/content/icon-guidebook.png) no-repeat 0 0;}
+.guidebook_app.hotline .info-box:before {content:""; position: absolute; left:30px; width:45px; height:45px; background: url(../images/content/icon-hotline.png) no-repeat 0 0;}
+.guidebook_app .info-box-gray {background-color: #f5f5f5; position: relative; padding:20px;}
+.guidebook_app dl.table {display: table; width:100%; margin-top: 20px;}
+.guidebook_app dl.table dt {display: table-cell; width:100px; vertical-align:top; padding-top: 7px;}
+.guidebook_app dl.table dd {display: table-cell;}
+.guidebook_app .ess_message {color:red; font-size: 0.9222em;}
+.guidebook_app .ess_message > div.inbox {border:1px solid red;}
+.guidebook_app ul.table {display: table; width:100%; margin-top: 20px; max-width: 500px; margin:40px auto;}
+.guidebook_app ul.table li {display: table-cell; width:50%; text-align: center;}
+
+
+@media(max-width:480px){
+    .guidebook_app ul.table li{display: block; margin: 30px auto;}
+    .guidebook_app ul.table li .guide-caption{width: 160px; margin: 0 auto;}
+    .guidebook_app ul.table li .heading4{display: block; margin-top: 5px;}
+}
+.guidebook_app ul.table li .guidebook_img {width:160px; height: 200px; background-color: #eee; border-radius: 6px; display: inline-block;}
+.guidebook_app .guide_wrap{text-align: center; margin-top: 50px; font-size: 0; padding: 0 200px;}
+.guidebook_app .guide_wrap div{float: left; text-align: left; height: 200px;}
+.guidebook_app .guide_wrap .guide_side{width: 50%;}
+.guidebook_app .guide_wrap .guidebook_img {width:160px; height: 200px; background-color: #eee; border-radius: 6px;}
+.guidebook_app .guide_wrap .guide_list {width: calc(100% - 160px); font-size: 15px; padding-left: 15px; box-sizing: border-box; letter-spacing: -0.025em; line-height: 1.6;}
+.guidebook_app .guide_wrap .guide_list strong{font-size: 16px; color: #000; margin-bottom: 10px; display: inline-block;}
+.guidebook_app .guide_wrap .guide_list p{padding-left: 5px;}
+.guidebook_app .guide_wrap .guide_list span{font-weight: 700;}
+
+@media(max-width:1200px){
+    .guidebook_app .guide_wrap{padding: 0 20%;}
+    .guidebook_app .guide_wrap .guide_side{width: auto; float: none; margin: 0 auto;}
+    .guidebook_app .guide_wrap .guide_right{margin-top: 50px;}
+}
+@media(max-width:768px){
+    .guidebook_app .info-box-center{margin-top: 30px;}
+    .guidebook_app .guide_wrap .guidebook_img{margin: 0 auto;}
+    .guidebook_app .guide_wrap .guide_list{width: 90%; margin: 20px 5% 0 5%; padding: 0;}
+    .guidebook_app .guide_wrap div{float: none; height: auto;}
+}
+@media(max-width:480px){
+    .guidebook_app .guide_wrap .guide_list{width: 100%; margin: 20px 0 0 0;}
+}
+
+.pl-20 {padding-left: 20px;}
+.pr-20 {padding-right: 20px;}
+.guidebook_app .info-box-gray ol li {margin-left:20px; list-style: decimal; margin-top: 5px;}
+.guidebook_app .info-box-gray ul li {margin-left:20px; margin-top: 5px; list-style: disc;}
+.guidebook_app a {color:#007dc3; text-decoration: underline; font-style: italic;}
+.guidebook_app a.button {color: #fff; text-decoration: none; font-style: normal;}
+
+.deemed-white {width:100%; height:100%; position: absolute; top:0; left:0; z-index: 99; background-color: rgba(255,255,255,0.9)}
+.deemed-white .app_progess_box {width:60%; max-width: 300px; margin:0 auto; padding:60px; background: url(../images/content/back-guidebook-blue.gif); border-radius: 6px; overflow: hidden; position: relative; margin-top: 50%;}
+.guidebook_app.hotline .deemed-white .app_progess_box {margin-top: 30%;}
+.deemed-white .app_progess_box .title {width:130px; height: 50px; border-radius: 50%; background-color: #fff; position: relative; padding-top:80px; text-align: center; font-weight: bold; color:#007dc3;font-size: 1.2em; margin:0 auto;}
+.deemed-white .app_progess_box .title:before {content: ""; position: absolute; left:40px; top:25px; width:45px; height:45px; background: url(../images/content/icon-guidebook.png) no-repeat 0 0;}
+.guidebook_app.hotline .deemed-white .app_progess_box .title:before {content: ""; position: absolute; left:40px; top:25px; width:45px; height:45px; background: url(../images/content/icon-hotline.png) no-repeat 0 0;}
+.deemed-white .app_progess_box p {text-align: center; color:#fff;}

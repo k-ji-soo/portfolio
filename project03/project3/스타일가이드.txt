@@ -1,0 +1,59 @@
+nav 
+fs 21px
+depth2 fs 16px, color:#333
+hover color #e1b75d
+
+
+tit(소장자료검색) 52px
+
+sub
+(~찾아보세요)
+(향토.개항문화자료)
+24px
+
+숫자 50px
+
+검색어 : 21px
+
+주제 시대 유형별검색 : 18px
+
+------------------------------------------
+content1
+color #333
+tit fs 34px
+sub-tit fs 28px
+p fs 21px
+btn(자세히보기) 18px
+
+circle
+color #d8d8d8
+bg #ac8b43
+
+
+content2
+fs 24px
+
+cont3추천검색키워드
+color #333
+tit-fs 28px
+키워드1 fs 21px, color #666
+키워드2 fs 32px color #AC8B43
+
+유형별
+subtit-fs26px
+color #AC8B43
+fs 21px #333
+border #e3e3e3
+
+복제금지text
+fs 16px 
+color #9d9d9d
+
+footer
+bg #2d2d2d
+address fs 18px, color #d1d1d1
+copy fs 18px, color #999
+
+사이트
+fs 18px, color #d1d1d1
+border #777

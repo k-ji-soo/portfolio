@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인천광역시교육청 화도진도서관 향토·개항문화 자료관</title>
+    <meta name='Title' content='화도진도서관'>
+	<meta name='Keywords' content='화도진도서관,향토·개항문화 자료관,sass페이지'>
+	<meta name='Author' content='jisoo'>
+	<meta name='Publisher' content='jisoo'>
+	<meta name='Author-Date' content='2021-06-04'>
+	<meta name='Copyright' content='https://history.ice.go.kr/'>
+	<meta name='Robots' content='index'>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel='stylesheet' href='css/style.css'>
+    <!-- <link rel="stylesheet" href="css/response.css"> -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/lib/jquery-1.12.4.min.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <ul id="skip">
+        <li><a href="#header">헤더 바로가기</a></li>
+        <li><a href="#nav">메뉴 바로가기</a></li>
+        <li><a href="#content">내용 바로가기</a></li>
+    </ul>
+    <div class="wrap">
+        <header id="header">
+            <div class="head-inner">
+                <h1 class="logo">
+                    <a href="index.html"></a>
+                </h1>
+                <nav id="nav">
+                    <div class="gnb">
+                        <ul>
+                            <li>
+                                <a href="#">소장자료검색</a>
+                                <ul class="depth2">
+                                    <li><a href="#">소장자료검색</a></li>
+                                    <li><a href="#">고서원문DB</a></li>
+                                    <li><a href="#">소장도서목차서비스</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">온라인전시</a>
+                                <ul class="depth2">
+                                    <li><a href="#">온라인전시</a></li>
+                                    <li><a href="#">온라인강의</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">인천역사개관</a>
+                                <ul class="depth2">
+                                    <li><a href="#">인천의 역사</a></li>
+                                    <li><a href="#">인천문화생활연표</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">향토·개항문화자료관 및 전시관 소개</a>
+                                <ul class="depth2">
+                                    <li><a href="#">자료관 및 전시관 소개</a></li>
+                                    <li><a href="#">이용안내</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div> <!--div class="gnb"-->
+                    <div class="mobile-nav">
+                        
+                    </div>
+                    <div class="right-btn">
+                        <div class="langs">
+                            <!-- <button type="button" class="lang-btn"></button> -->
+                            <span class="lang-btn">KOR</span>
+                        </div>
+                        <div class="sitemap">
+                            <a href="#" class="sitemap-btn" title="사이트맵 바로가기"></a>
+                        </div>
+                    </div>
+                </nav>
+            </div> <!--class="head-inner"-->
+        </header>
+        <main id="slide">
+            <div class="main-txt-wrap">
+                <div class="main-txtBox">
+                    <div class="main-txt">
+                        <h2 class="tit">
+                            소장자료 검색
+                            <span>도서, 영상, 도록, 사진 등 다양한 유형의 인천향토문화자료를 찾아보세요.</span>
+                        </h2>
+                    </div>
+                    <div class="search-box">
+                        <form>
+                            <fieldset>
+                                <legend>자료 검색</legend>
+                                <div class="search-inner">
+                                    <select name="search" id="select">
+                                        <option value="all">전체</option>
+                                        <option value="title">제목</option>
+                                        <option value="cont">내용</option>
+                                        <option value="num">등록번호</option>
+                                    </select>
+                                    <label for="user-search">검색어 입력</label>
+                                    <input type="text" class="input-search" placeholder="검색어를 입력하세요." id="user-search">
+                                    <input type="button" class="input-btn" value="search">
+                                </div>
+                                <a href="#" class="detail-search">상세검색
+                                    <em class="arr">></em>
+                                </a>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="data-num">
+                        <h3 class="ir_so">자료 현황</h3>
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt>향토·개항 문화자료</dt>
+                                    <dd><span class="num" data-rate="1848" onkeyup="inputNumberFormat(this)">0</span><em>건</em></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>도서</dt>
+                                    <dd><span class="num" data-rate="488">0</span><em>건</em></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>비도서</dt>
+                                    <dd><span class="num" data-rate="1360" onkeyup="inputNumberFormat(this)">0</span><em>건</em></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="scroll-down">
+                    <a href="#" title="아래 컨텐츠로 이동">아래 컨텐츠로 이동</a>
+                </div>
+                <div class="bar-all">
+                    <div class="search-bar">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="i_theme">주제별 검색</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="i_age">시대별 검색</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="i_type">유형별 검색</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-bg">
+                    <ul class="slides">
+                        <li class="img_banner01"></li>
+                        <li class="img_banner02"></li>
+                        <li class="img_banner03"></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <section id="section1">
+            <div class="sec1-inner">
+                <div class="online-wrap">
+                    <h3 class="online-tit">온라인 전시</h3>
+                    <div class="online-slide">
+                        <div class="online-view">
+                            <ul class="online-slider">
+                                <li>
+                                    <div class="online-exhi">
+                                        <div class="thumb">
+                                            <div class="img">
+                                                <span>
+                                                    <a href="#">
+                                                        <img src="img/content/cont1_img01.jpg" alt="slide1">
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="online-txt">
+                                            <dl>
+                                                <dt class="online-subtit">
+                                                    <a href="#">인천 근대 건축</a>
+                                                </dt>
+                                                <dd class="explain">
+                                                    <p>
+                                                        [오레당]슬레이트 지붕과 붉은 벽돌로 쌓은 외벽, 티크나무로 짠 유리창이 우아한 2층 건물이었다. 초창기 인천해관 통역관으로 근무한 청국 외교관 출신 오례당 (吳禮堂)이 전임지 스페인에서 결혼한 스페인 출신 부인의 간청에 따라 1909년에 지은 호화 저택이었다. 광복 후 미군 장교 숙사로 쓰이다가 우리 군 특수부대가 주둔하던 중 1960년대 실화로 소실되고
+                                                    </p>
+                                                </dd>
+                                            </dl>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="online-exhi">
+                                        <div class="thumb">
+                                            <div class="img">
+                                                <span>
+                                                    <img src="img/content/cont1_img02.jpg" alt="slide2">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="online-txt">
+                                            <dl>
+                                                <dt class="online-subtit">
+                                                    <a href="#">인천의 3 ·1 운동</a>
+                                                </dt>
+                                                <dd class="explain">
+                                                    <p>
+                                                        일제지배하의 민족운동은 대체로 3·1운동을 중심으로 하여 1920년대에 가장 활발히 전개되었다. 해외에서는 독립군의 활동 등 민족운동이 적극적으로 전개되고 있었으나 국내에서는 극단의 무력탄압으로 반일민족독립운동의 표면화는 어려운 실정이었다. 그러나 내적으로는 반일감정이 축적되어 1919년 3·1운동 시 대대적으로 폭발되었
+                                                    </p>
+                                                </dd>
+                                            </dl>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="online-exhi">
+                                        <div class="thumb">
+                                            <div class="img">
+                                                <span>
+                                                    <img src="img/content/cont1_img03.jpg" alt="slide3">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="online-txt">
+                                            <dl>
+                                                <dt class="online-subtit">
+                                                    <a href="#">해관문서, 인천광역시 문화재자료 제20호</a>
+                                                </dt>
+                                                <dd class="explain">
+                                                    <p>
+                                                        해관은 수출입 화물에 대한 관세사무 등을 맡아보는 행정기관으로 오늘날의 세관과 같다. 우리나라에서의 해관업무는 1883년 6월 16일(음력 5월 12일) 인천해관의 창설을 시초로 하여, 같은 해 10월 31일(음력 10월 1일)에 원산해관, 11월 3일(음력 10월 4일)에 부산해관이 각각 설립됨으로써 시작됐다. 인천해관은 현재의 항동 1가 1번지 현 파라
+                                                    </p>
+                                                </dd>
+                                            </dl>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="online-exhi">
+                                        <div class="thumb">
+                                            <div class="img">
+                                                <span>
+                                                    <img src="img/content/cont1_img04.jpg" alt="slide4">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="online-txt">
+                                            <dl>
+                                                <dt class="online-subtit">
+                                                    <a href="#">사진으로 보는 인천교육 반세기</a>
+                                                </dt>
+                                                <dd class="explain">
+                                                    <p>
+                                                        <사진으로 보는 인천교육 반세기>(* '사진으로 보는 인천교육 반세기' 내용은 2006년 인천학생교육문화회관에 전시되었던 내용을 다시 편집하여 올립니다.)우리가 살고 있는 인천의 과거와 현재의 학교 모습을 통해, 누군가는 추억을 떠올리고 누군가에게는 인천을 새롭게 보는 기회가 되길 바랍니다.부평초등학교(1899년 개교)1899년 3월 15
+                                                    </p>
+                                                </dd>
+                                            </dl>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="online-pager-box">
+                        <div class="pager-list">
+                            <div class="pager-item">
+                                <a href="#" class="pager-btn active"></a>
+                                <a href="#" class="pager-btn"></a>
+                                <a href="#" class="pager-btn"></a>
+                                <a href="#" class="pager-btn"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="online-more">더보기 +</a>
+                </div> <!--class="online-wrap"-->
+            </div>
+        </section>
+        <section id="section2">
+            <div class="sec2-inner">
+                <div class="inner-img">
+                    <ul>
+                        <li>
+                            <a href="#" class="img-box">
+                                <span class="img">
+                                    <img src="img/content/cont2_img01.jpg" alt="고서원문DB">
+                                </span>
+                                <em class="txt">고서원문 DB</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="img-box">
+                                <span class="img">
+                                    <img src="img/content/cont2_img02.jpg" alt="소장자료 목차서비스">
+                                </span>
+                                <em class="txt">소장자료 목차서비스</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="img-box">
+                                <span class="img">
+                                    <img src="img/content/cont2_img03.jpg" alt="인천문화생활연표">
+                                </span>
+                                <em class="txt">인천문화생활연표</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="img-box">
+                                <span class="img">
+                                    <img src="img/content/cont2_img04.jpg" alt="전시관 소개">
+                                </span>
+                                <em class="txt">전시관 소개</em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+        <section id="section3">
+            <div class="sec3-inner">
+                <div class="sec3-cont">
+                    <div class="keyword">
+                        <h3>추천 검색 키워드</h3>
+                        <div class="keyword-box">
+                            <div class="keyword-list-all">
+                                <ul class="keyword-list">
+                                    <li class="kw1"><a href="#">경기도곡물검사소</a></li>
+                                    <li class="kw1"><a href="#">표창</a></li>
+                                    <li class="kw2"><a href="#">삼육상회</a></li>
+                                    <li class="kw2"><a href="#">미국연초주식회사</a></li>
+                                    <li class="kw1"><a href="#">파리</a></li>
+                                    <li class="kw2"><a href="#">강화도</a></li>
+                                    <li class="kw1"><a href="#">인천상업전수교육</a></li>
+                                    <li class="kw2"><a href="#">인천우편국</a></li>
+                                    <li class="kw1"><a href="#">시세</a></li>
+                                    <li class="kw1"><a href="#">중앙동</a></li>
+                                    <li class="kw1"><a href="#">신흥시장</a></li>
+                                    <li class="kw1"><a href="#">대신궁</a></li>
+                                    <li class="kw1"><a href="#">야구</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec3-type">
+                        <div class="type-tap">
+                            <ul>
+                                <li><a href="#">유형별</a></li>
+                            </ul>
+                        </div>
+                        <div class="type-list-box">
+                            <div class="type-list">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico public"></i>
+                                            <span class="ico-txt">간행물</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico drawing"></i>
+                                            <span class="ico-txt">그림</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico data"></i>
+                                            <span class="ico-txt">낱장자료</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico picture"></i>
+                                            <span class="ico-txt">사진</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico view"></i>
+                                            <span class="ico-txt">스테레오뷰</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico slide"></i>
+                                            <span class="ico-txt">슬라이드</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico real"></i>
+                                            <span class="ico-txt">실물</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico postcard"></i>
+                                            <span class="ico-txt">엽서</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico record"></i>
+                                            <span class="ico-txt">음반</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico map"></i>
+                                            <span class="ico-txt">지도</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico book"></i>
+                                            <span class="ico-txt">책</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="list-ico plus"></i>
+                                            <span class="ico-txt">더보기</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="top">
+            <a href="#" class="top-btn" title="상단으로 가기"></a>
+        </div>
+        <footer id="footer">
+            <div class="warning">
+                <p>※ 본 사이트의 자료들을 무단 전재 및 무단 복제, 배포하는 경우에는 법적 조치에 처해질 수 있습니다.</p>
+            </div>
+            <div class="foot-bottom">
+                <div class="f-site">
+                    <div class="f-box">
+                        <a href="#" class="btn-up">향토 관련 사이트</a>
+                    </div>
+                    <div class="f-box">
+                        <a href="#" class="btn-up">유관기관</a>
+                    </div>
+                </div>
+                <div class="f-info">
+                    <p class="address">
+                        22511 인천광역시 동구 화도진로 122(화수동)<br>
+                        Tel : 032) 760-4129, 4131 
+                        <em class="line">|</em>
+                        Fax: 032) 761-0634
+                    </p>
+                    <span class="copy">
+                        Copyright © 2018 Incheon Metropolitan City Office of Education Hwadojin Library,<br>All Rights Reserved.
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

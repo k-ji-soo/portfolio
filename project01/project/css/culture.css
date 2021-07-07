@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.container{
+	width:1200px;
+	height:auto;
+	margin:0 auto;
+}
+
+/* main banner */
+.main_banner{
+	width:100%;
+	height:674px;
+	background:url(../img/culture_banner.jpg) no-repeat center center/cover;
+	
+}
+
+.main_banner .text-box-ele{
+	position:relative;
+	height:674px;
+}
+
+.main_banner .text-box-ele .text-box-tit{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	z-index: 1;
+}
+
+.main_banner .large-text{
+	width:100%;
+	max-width:1200px;
+	margin:0 auto;
+}
+
+.main_banner .large-text .large-text-inner{
+	font-size:58px;
+	font-weight:700;
+	color:#fff;
+}
+
+.main_banner .small-text{
+	width:100%;
+	padding: 20px;
+	background-color: rgba(0,0,0,.6);
+	overflow: hidden;
+	margin-top: 30px;
+}
+
+.main_banner .small-text .small-text-inner{
+	display: block;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+font-size: 20px;
+color: #fff;
+font-weight: 300;
+}
+
+/* location */
+.location{
+	width:100%;
+	max-width:1200px;
+	margin:10px auto 0 auto;
+	padding:10px 0px 20px 15px;
+	font-size:16px;
+	color:#666;
+	background:url(../img/nav_home.png) no-repeat 0px 15px;
+    background-size:auto;
+	background-size:10px 12px;
+	box-sizing:border-box;
+}
+
+.location .ar{
+	padding:10px;
+}
+
+.location span>a{
+	font-weight:700;
+	color:#666;
+}
+
+/* contents */
+.cont_box{
+	height:1000px;
+}
+
+.cont-top{
+	position:relative;
+}
+
+.float-left .float-left-menu{
+	margin-top:13px;
+}
+
+.float-left .float-left-menu li{
+	float:left;
+	margin-right:20px;
+}
+
+.float-left-menu li:after{
+content: '';
+display: block;
+position: absolute;
+right: -5px;
+top: 4px;
+height: 12px;
+width: 1px;
+background-color: #ddd;
+}
+
+.float-left .float-left-menu li a{
+	
+}
+
+
+
+
+
+
+

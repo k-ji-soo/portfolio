@@ -1,0 +1,948 @@
+/*
+	@filename	: visit.seoul.function.js
+    @filedesc	: javascript function for visit seoul
+	@date		: 2015.11.12
+	@author		: Jinwoo.Yuk
+*/
+
+function f_move_page (msg, page) {
+    msg = (msg != "" && typeof(msg) == "string" && msg != undefined) ? msg : "";
+    page = (page != undefined) ? page : "/";
+
+    if (msg != "") {
+        alert(msg);
+    }
+    document.location.href = page;
+}
+
+function f_eval (obj) {
+	var eObj = null;
+	if (obj != null) {
+		eObj = eval('(' + obj + ')');
+	}
+	return eObj;
+}
+
+function f_exec_ajax (uri, type, dataType, param, callback, async, failCallback, args) {
+	if(async === undefined) {
+		async = true;
+	}
+
+    $.ajax({
+          type : type
+        , dataType : dataType
+        , data : param
+        , url : uri
+        , async : async
+    }).done(function (data) {
+        if (typeof(callback) == "function") {
+            callback(data, args);
+        }
+    }).fail(function (data) {
+    	if (typeof(failCallback) == "function") {
+    		failCallback(data, args);
+        } else {
+        	console.log("Network Error!");
+        }
+    });
+}
+
+function f_ajax (cfg, args) {
+	var ajax_config = {
+			  uri : ""
+			, type : "POST"
+			, dataType : "json"
+			, param : ""
+			, callback : null
+			, async : false
+			, fail : null
+			, args : args
+	};
+	ajax_config = $.extend(ajax_config, cfg);
+
+	f_exec_ajax(ajax_config.uri, ajax_config.type, ajax_config.dataType, ajax_config.param, ajax_config.callback, ajax_config.async, ajax_config.fail, ajax_config.args);
+}
+
+function f_reset_below_form (element) {
+	element.find("input, select, textarea").each(function () {
+		var ele = $(this).get(0);
+		var tagName = ele.tagName.toLowerCase();
+		var tagType = $(ele).attr("type");
+
+		if (tagName == "select") {
+			$(ele).find("option").eq(0).attr("selected", "selected");
+			$(ele).trigger("change");
+		} else if (tagName == "input") {
+			if (tagType != undefined) {
+				if (tagType == "checkbox") {
+					$(ele).prop("checked", false);
+				} else if (tagType == "radio") {
+					$(ele.attr("name")).eq(0).prop("checked", false);
+				} else if (tagType == "file") {
+					$(ele).replaceWith($(ele).clone(true)); // for ie.
+					$(ele).val(""); // for others.
+				} else {
+					if ((tagType != "button") && (tagType != "submit") && (tagType != "reset")) {
+						$(ele).val("");
+					}
+				}
+			}
+		} else if (tagName == "textarea") {
+			$(ele).val("").trigger("keyup");
+		}
+	});
+}
+
+function f_do_submit(strURL, arrData, strMethod) {
+	var objTime = new Date();
+	var strFormID = "frm" + objTime.getTime();
+
+	var formEL = $("<form />").attr("id", strFormID).attr("name", strFormID).attr("action", strURL);
+
+	if(!strMethod) {
+		strMethod = "post";
+	}
+	formEL.attr("method", strMethod);
+
+	for(index in arrData) {
+		var strType = arrData[index].type;
+		if(!strType) {
+			strType = "hidden";
+		}
+		var strName = arrData[index].name;
+		var strValue = arrData[index].value;
+		$("<input />").attr("type", strType).attr("name", strName).val(strValue).appendTo(formEL);
+	}
+	formEL.appendTo("body");
+	formEL.submit();
+}
+
+//parseUri 1.2.2
+//(c) Steven Levithan <stevenlevithan.com>
+//MIT License
+function parseUri (str) {
+	var	o   = parseUri.options,
+		m   = o.parser[o.strictMode ? "strict" : "loose"].exec(str),
+		uri = {},
+		i   = 14;
+
+	while (i--) uri[o.key[i]] = m[i] || "";
+
+	uri[o.q.name] = {};
+	uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+		if ($1) uri[o.q.name][$1] = $2;
+	});
+
+	return uri;
+};
+
+parseUri.options = {
+	strictMode: false,
+	key: ["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],
+	q:   {
+		name:   "queryKey",
+		parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+	},
+	parser: {
+		strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+		loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+	}
+};
+
+/*
+@filename	: jquery.popup.js
+@filedesc	: open/close popup
+@date		: 2015.06.10
+@author		: Jinwoo.Yuk
+@use
+	-- open
+	$.popup(true, {});
+	-- close
+	$.popup(false);
+*/
+
+(function ($)
+{
+	$.popup = function (action, config) {
+		if (action) {
+			var def = {
+				target: "_blank",
+				href: null,
+				width: screen.width / 2,
+				height: screen.height / 2,
+				titlebar: "no",
+				status: "no",
+				resizable: "no",
+				toolbar: "no",
+				scrollbars: "no",
+				menubar: "no"
+			};
+			var options = $.extend(def, config);
+			var posY = (parseInt(screen.height / 2)) - (parseInt(options.height / 2));
+			var posX = (parseInt(screen.width / 2)) - (parseInt(options.width / 2));
+			var win = window.open(options.href, options.target, 'titlebar=' + options.titlebar + ', screenX=' + posX + ', screenY=' + posY + ', left=' + posX + ', top=' + posY + ', status=' + options.status + ', resizable=' + options.resizable + ', toolbar=' + options.toolbar + ', scrollbars=' + options.scrollbars + ', menubar=' + options.menubar + ', width=' + options.width + ', height=' + options.height);
+
+			if (win) {
+				win.focus();
+			}
+
+			return false;
+		} else {
+			window.open("", "_self").close();
+		}
+	};
+})(jQuery);
+
+function f_get_current_origin_url() {
+	var l = document.location.href;
+	var info = parseUri(l);
+	return info.protocol + "://" + info.authority;
+}
+
+function f_share_twitter(text, hash) {
+	var l = document.location.href;
+	//URI = encodeURIComponent(f_get_current_origin_url() + URI);
+	var uri = encodeURIComponent(l);
+	text = encodeURIComponent(text);
+	hash = encodeURIComponent(hash);
+	var cfg = {
+		target: "twitter_share",
+		href: "https://twitter.com/intent/tweet?url=" + uri + "&text=" + text + "&hashtags=" + hash,
+		width: 780,
+		height: 448,
+	};
+	$.popup(true, cfg);
+}
+
+function f_share_facebook(text) {
+	var l = document.location.href;
+	//URI = encodeURIComponent(f_get_current_origin_url() + URI);
+	var uri = encodeURIComponent(l);
+	text = encodeURIComponent(text);
+	var cfg = {
+		target: "facebook_share",
+		href: "http://www.facebook.com/sharer.php?u=" + uri + "&t=" + text,
+		width: 626,
+		height: 436,
+	};
+	$.popup(true, cfg);
+}
+
+function f_share_google_plus() {
+	var l = document.location.href;
+	//URI = encodeURIComponent(f_get_current_origin_url() + URI);
+	var uri = encodeURIComponent(l);
+	var cfg = {
+		target: "google_share",
+		href: "https://plus.google.com/share?url=" + uri,
+		width: 496,
+		height: 460,
+	};
+	$.popup(true, cfg);
+}
+
+//function f_share_mail(URI,URIPATH) {
+function f_share_mail(URI,URIPATH,MENUNO) {
+	var domain = f_get_current_origin_url();
+
+	var l = document.location.href;
+	var uri = encodeURIComponent(l);
+
+	var cfg = {
+		target: "mail_share",
+		href: (domain + "/comm/mail_share/share" + "?path="+URIPATH+"&menuNo="+MENUNO),
+		//href: (URI + "/comm/mail_share/share"),
+		width: 850,
+		height: 620,
+		scrollbars: "yes"
+	};
+	$.popup(true, cfg);
+}
+
+function f_share_kakao_story(text) {
+	var l = document.location.href;
+	//URI = encodeURIComponent(f_get_current_origin_url() + URI);
+	var uri = encodeURIComponent(l);
+	text = encodeURIComponent(text);
+	var cfg = {
+		target: "kakaostory_share",
+		href: "https://story.kakao.com/share?url=" + uri,
+		width: 600,
+		height: 450,
+	};
+	$.popup(true, cfg);
+}
+function f_share_naver(text) {
+	var l = document.location.href;
+	var uri = encodeURIComponent(l);
+	text = encodeURIComponent(text);
+	var cfg = {
+			target: "naver_share",
+			href: "http://share.naver.com/web/shareView.nhn?url=" + uri + "&title=" + text,
+			width: 600,
+			height: 450,
+	};
+	$.popup(true, cfg);
+}
+
+function f_share_wavo(text) {
+	var l = document.location.href;
+	var uri = encodeURIComponent(l);
+	text = encodeURIComponent(text);
+	var cfg = {
+			target: "naver_wavo",
+			href: "http://service.weibo.com/share/share.php?appkey=&language=zh_cn&url=" + uri + "&title=" + text,
+			width: 600,
+			height: 450,
+	};
+	$.popup(true, cfg);
+}
+
+////
+function f_share_linkedin(text) {
+	var l = document.location.href;
+	var uri = encodeURIComponent(l);
+	text = encodeURIComponent(text);
+	var cfg = {
+			target: "share_linkedin",
+			href: "https://www.linkedin.com/shareArticle?mini=true&amp;url=" + uri + "&amp;title=" + text ,
+			width: 600,
+			height: 450,
+	};
+	$.popup(true, cfg);
+
+}
+
+function f_print_screen() {
+	window.print();
+}
+
+function f_open_layer_share() {
+	$("html").addClass("onnav");
+	if($(window).width() > 800) {
+		$(".mask").hide();
+	} else {
+		$(".mask").show();
+	}
+	$(".layer_share").show();
+
+}
+function f_close_layer_share() {
+	$("html").removeClass("onnav");
+	$(".layer_share").hide();
+	$(".mask").hide();
+}
+
+/*
+ * 	GoodsInfo(인터파크 관련)
+ * 공연일자 조회
+ * 공연회차 조회
+ * 남은좌석 조회
+ * 예약하기 링크
+ */
+var GoodsInfo = {
+
+	Data : {
+		  goodsCode : ""
+		, placeCode : ""
+		, langType : ""
+		, langCodeType : ""
+		, partnerCode : ""
+		, isMobile : ""
+		, playDate : ""
+		, playSeq : ""
+	},
+
+	// Data 정보 셋팅
+	SetData : function(key, value){
+		GoodsInfo.Data[key] = value;
+	},
+
+	// Data 정보 가져오기
+	GetData : function(key) {
+		return GoodsInfo.Data[key];
+	},
+
+	// 1.공연일자 가져오기
+	GetPlayDate : function(){
+		
+		var jsonData = JSON.stringify({
+				"connectUrl" : "http://ticket.interpark.com/Global/Partner/PartnerDate/GoodsDateXML.asp"
+				, "bc1" : "PlayDate"
+				, "bc2" : GoodsInfo.GetData("goodsCode")
+				, "bc3" : GoodsInfo.GetData("placeCode")
+				, "bc4" : GoodsInfo.GetData("partnerCode")
+				, "lang" : GoodsInfo.GetData("langCodeType")
+		});
+		
+		f_getGoodsDate(jsonData, function(data){
+			
+			var options = new StringBuffer();
+			options.append("<option value=\"\" title=\"" + ticketMsg("post.select.playdate") + "\">" + ticketMsg("post.select.playdate") + "</option>");
+			$.each(data, function(index, entity){
+				options.append("<option value=\"" + entity.PlayDate + "\" title=\"" + entity.PlayDateText + "\">" + entity.PlayDateText + "</option>");
+			});
+			
+			$("#reservation-date").html(options.toString());
+
+		});
+	},
+
+	// 2.공연회차 가져오기
+	GetPlayTime : function(playDate){
+		
+		var options = new StringBuffer();
+		options.append("<option value=\"\" title=\"" + ticketMsg("post.select.playtime") + "\">" + ticketMsg("post.select.playtime") + "</option>");
+
+		if(playDate != ""){
+			var jsonData = JSON.stringify({
+				"connectUrl" : "http://ticket.interpark.com/Global/Partner/PartnerDate/GoodsDateXML.asp"
+				, "bc1" : "PlaySeq" // 고정값
+				, "bc2" : GoodsInfo.GetData("goodsCode") // 상품코드
+				, "bc3" : GoodsInfo.GetData("placeCode") // 공연장코드
+				, "bc4" : GoodsInfo.GetData("partnerCode") // 제휴코드
+				, "bc5" : playDate // 공연일
+				, "lang" : GoodsInfo.GetData("langCodeType") //언어코드
+			});
+
+			f_getGoodsDate(jsonData, function(data){
+				$.each(data, function(index, entity){
+					if(entity.PlayTime ==  "상시상품"){
+						options.append("<option value=\"" + entity.PlaySeq + "\" title=\"open\">open</option>");
+					}else{
+						options.append("<option value=\"" + entity.PlaySeq + "\" title=\"" + f_getAmPm(entity.PlayTime) + "\">" + f_getAmPm(entity.PlayTime) + "</option>");
+					}
+				});
+				
+				$("#reservation-time").html(options.toString());
+			});
+		}else{
+			
+			$("#reservation-time").html(options.toString());
+			GoodsInfo.GetRemindSeat('');
+		}
+	},
+
+	// 3.예매가능 좌석정보 가져오기
+	GetRemindSeat : function(playSeq) {
+
+		GoodsInfo.SetData("playSeq", playSeq);
+		var li = new StringBuffer();
+		if(playSeq != ""){
+			var jsonData = JSON.stringify({
+				"connectUrl" : "http://ticket.interpark.com/Global/Partner/PartnerDate/GoodsDateXML.asp"
+				, "bc1" : "RemainSeat" // 고정값
+				, "bc2" : GoodsInfo.GetData("goodsCode") // 상품코드
+				, "bc3" : GoodsInfo.GetData("placeCode") // 공연장코드
+				, "bc4" : GoodsInfo.GetData("partnerCode") // 제휴코드
+				, "bc5" : playSeq // 공연회차
+				, "lang" : GoodsInfo.GetData("langCodeType") //언어코드
+			});
+			f_getGoodsDate(jsonData, function(data){
+				$.each(data, function(index, entity){
+//					li.append("<li>");
+//					li.append("<span class=\"title-text\">" + entity.SeatGradeName + "</span>");
+//					li.append("<span class=\"num-wrap\">");
+//					li.append("<span class=\"num\">" + entity.RemainCnt + "</span>");
+//					li.append("<span class=\"txt\">" + ticketMsg("post.view.seat") + "</span>");
+//					li.append("</span>");
+//					li.append("</li>");
+					
+					li.append("<dl>");
+					li.append("<dt>" + entity.SeatGradeName + "</dt>");
+					li.append("<dd>" + entity.RemainCnt );
+					li.append("<span>" + ticketMsg("post.view.seat") + "</span>");
+					li.append("</dd>");
+					li.append("</dl>");
+				});
+				$("#availableSeats").html(li.toString());
+			});
+		}else{
+			$("#availableSeats").html(li.toString());
+		}
+	},
+
+	// 4.예매하기 팝업
+	DoBooking : function() {
+
+		var bookingUrl;
+
+		if(GoodsInfo.GetData("isMobile")){
+
+			if(GoodsInfo.GetData("langType") == "ko")
+				bookingUrl = "https://smticket.interpark.com/PartnerShip/ticket/index.html";
+			else
+				bookingUrl = "https://smticket.interpark.com/Global/ticket/index.html";
+
+		}else{
+			bookingUrl = "http://ticket.interpark.com/Global/Partner/Certify/VisitseoulBooking.asp";
+		}
+
+
+		f_getContactKey(GoodsInfo.GetData("langType"), function(data){
+
+			GoodsInfo.Data.mberCd = data.mberCd;
+			GoodsInfo.Data.mberId = data.mberId;
+			GoodsInfo.Data.mberNm = data.mberNm;
+			GoodsInfo.Data.mberKey = data.mberKey;
+
+			var frmTicketBooking;
+			frmTicketBooking = document.createElement("form");
+			frmTicketBooking.name = "wndBooking_Global";
+			frmTicketBooking.action = bookingUrl;
+			frmTicketBooking.target = "wndBooking_Global";
+			frmTicketBooking.method = "post";
+			document.body.appendChild(frmTicketBooking);
+
+			// 제휴코드
+			var o;
+			o = document.createElement("input");
+			o.name = "bp1";
+			o.type = "hidden";
+			o.value = GoodsInfo.GetData("partnerCode");
+			frmTicketBooking.appendChild(o);
+
+			// 상품코드
+			o = document.createElement("input");
+			o.name = "bp2";
+			o.type = "hidden";
+			o.value = GoodsInfo.GetData("goodsCode");
+			frmTicketBooking.appendChild(o);
+
+			// 회원코드
+			o = document.createElement("input");
+			o.name = "bp3";
+			o.type = "hidden";
+			o.value = GoodsInfo.Data.mberCd;
+			frmTicketBooking.appendChild(o);
+
+			// 회원ID
+			o = document.createElement("input");
+			o.name = "bp4";
+			o.type = "hidden";
+			o.value = GoodsInfo.Data.mberId;
+			frmTicketBooking.appendChild(o);
+
+			// 회원이름
+			o = document.createElement("input");
+			o.name = "bp5";
+			o.type = "hidden";
+			o.value = GoodsInfo.Data.mberNm;
+			frmTicketBooking.appendChild(o);
+
+			// 공연일
+			o = document.createElement("input");
+			o.name = "bp6";
+			o.type = "hidden";
+			o.value = GoodsInfo.GetData("playDate");
+			frmTicketBooking.appendChild(o);
+
+			// 공연회차
+			o = document.createElement("input");
+			o.name = "bp7";
+			o.type = "hidden";
+			o.value = GoodsInfo.GetData("playSeq");
+			frmTicketBooking.appendChild(o);
+
+			//언어코드
+			o = document.createElement("input");
+			o.name = "lang";
+			o.type = "hidden";
+			o.value = GoodsInfo.GetData("langCodeType");
+			frmTicketBooking.appendChild(o);
+
+			// 구분키
+			o = document.createElement("input");
+			o.name = "bpk";
+			o.type = "hidden";
+			o.value = GoodsInfo.Data.mberKey;
+			frmTicketBooking.appendChild(o);
+
+			if(GoodsInfo.GetData("isMobile")){
+				// 고정값
+				o = document.createElement("input");
+				o.name = "tp";
+				o.type = "hidden";
+				o.value = "BOOK";
+				frmTicketBooking.appendChild(o);
+			}
+
+			try{
+				if(GoodsInfo.GetData("isApp")=="app"){
+					//app
+					frmTicketBooking.target="_self";
+				    frmTicketBooking.submit();
+				    //app
+				}else{
+					var loc = "";
+
+					win = window.open(loc,"wndBooking_Global","top=10, left=10, width=900, height=682, scrollbars=yes");
+
+					if(win==null) {
+						alert(ticketMsg("alert.block.popup"));
+					} else {
+
+						frmTicketBooking.submit();
+						win.focus();
+					}
+				}
+			} catch(e){
+				alert(ticketMsg("alert.block.popup"));
+			}
+
+		});
+
+
+	}
+}
+
+/*
+ * 	Myticket(인터파크 관련)
+ */
+var Myticket = {
+
+	Data : {
+		langType : ""
+		, searchMode : "period"
+		, period : "15"
+		, monthly : ""
+	},
+
+	// Data 정보 셋팅
+	SetData : function(key, value){
+		Myticket.Data[key] = value;
+	},
+
+	// Data 정보 가져오기
+	GetData : function(key) {
+		return Myticket.Data[key];
+	},
+
+	// Data 삭제
+	RemoveData : function(key) {
+		Myticket.Data[key] = "";
+	},
+
+	// 1.티켓구매 내역
+	MyTicketList : function(){
+
+		if(Myticket.GetData("searchMode") == "monthly"){
+			var year = $("#monthly-year option:selected").val();
+			var month = $("#monthly-month option:selected").val();
+
+			if(year == "" || month == ""){
+				alert(ticketMsg("member.tickets.offers.alert.select.monthly"));
+				return false;
+			}
+			month = (month < 10 ? "0" + month : month);
+			Myticket.SetData("monthly", year + month);
+		}
+
+		f_getContactKey(Myticket.GetData("langType"), function(ticketKey){
+
+			var jsonData = JSON.stringify({
+				"connectUrl" : "http://ticket.interpark.com/Global/Partner/PartnerDate/MyTicketListDateXML.asp"
+				, "cp1" : ticketKey.partnerCode // 제휴코드
+				, "cp2" : ticketKey.mberCd // 회원코드
+				, "cp3" : ticketKey.mberId // 회원ID
+				, "cp4" : ticketKey.mberNm // 회원이름(필수 아님)
+				, "cp5" : Myticket.GetData("period") // 예매리스트 최근 날짜 검색
+				, "cp6" : Myticket.GetData("monthly")  // 예매 월 기준 검색
+				, "lang" : ticketKey.interparkCode.langCode // 언어코드
+				, "cpk" : ticketKey.mberKey  // 구분키
+			});
+
+			f_getGoodsDate(jsonData, function(data){
+
+				var tbody = new StringBuffer();
+				if(data.length > 0){
+					$.each(data, function(index, entity){
+						tbody.append("<tr>");
+						tbody.append("<td>" + entity.BDate + "</td>");
+						tbody.append("<td onclick='Myticket.TicketDetail(" +
+											"{\"ticketNo\":\""+ entity.TicketNo +"\"" +
+											",\"orderNum\":\""+ entity.OrderNum +"\"" +
+											",\"interMem\":\""+ entity.InterMem +"\"" +
+											",\"goodsCode\":\""+ entity.GoodsCode +"\"" +
+											",\"placeCode\":\""+ entity.PlaceCode +"\"}" +
+											");' style='cursor:pointer'><strong>" + entity.TicketNo + "</strong></td>");
+						tbody.append("<td>" + entity.PlayDate + "</td>");
+						tbody.append("<td>" + entity.TicketCnt + "</td>");
+						tbody.append("<td>" + entity.Status + "</td>");
+						tbody.append("<td>" + entity.CancellationDeadline + "</td>");
+						if(entity.Status != '' && entity.Status != null){
+							if(entity.Status != 'Booking Canceled'){
+								tbody.append("<td><a class='button middle red bold' href='javascript: Myticket.TicketDetail(" +
+										"{\"ticketNo\":\""+ entity.TicketNo +"\"" +
+										",\"orderNum\":\""+ entity.OrderNum +"\"" +
+										",\"interMem\":\""+ entity.InterMem +"\"" +
+										",\"goodsCode\":\""+ entity.GoodsCode +"\"" +
+										",\"placeCode\":\""+ entity.PlaceCode +"\"}" +
+								");'>Cancel</a></td>");
+							}else{
+								tbody.append("<td></td>");
+							}
+						}else{
+							tbody.append("<td></td>");
+						}
+						tbody.append("</tr>");
+					});
+				}else{
+					tbody.append("<tr><td colspan='6'>" + ticketMsg("data.value.noData") + "</td></tr>");
+				}
+
+				$("#ticketList").html(tbody.toString());
+				$("#ticketTotalCnt").html(data.length);
+			});
+		});
+	},
+
+	// 2.티켓구매 상세 내역
+	TicketDetail : function(ticketInfo){
+
+		var tInfo = ticketInfo;
+
+		f_getContactKey(Myticket.GetData("langType"), function(ticketKey){
+			var ticketDtlUrl;
+
+			if(ticketKey.isMobile){
+
+				if(Myticket.GetData("langType") == "ko")
+					ticketDtlUrl = "https://smticket.interpark.com/PartnerShip/ticket/my/booked_detail_gate.html";
+				else
+					ticketDtlUrl = "https://smticket.interpark.com/Global/ticket/my/booked_detail_gate.html";
+
+			}else{
+				ticketDtlUrl = "http://ticket.interpark.com/Global/Partner/Certify/BizCancelDetail.asp";
+			}
+
+			var frmTicketDtl;
+			frmTicketDtl = document.createElement("form");
+			frmTicketDtl.name = "wndTicketDtl_Global";
+			frmTicketDtl.action = ticketDtlUrl;
+			frmTicketDtl.target = "wndTicketDtl_Global";
+			frmTicketDtl.method = "post";
+			document.body.appendChild(frmTicketDtl);
+
+			// 제휴코드
+			var o;
+			o = document.createElement("input");
+			o.name = "cp1";
+			o.type = "hidden";
+			o.value = ticketKey.partnerCode;
+			frmTicketDtl.appendChild(o);
+
+			// 회원코드
+			o = document.createElement("input");
+			o.name = "cp2";
+			o.type = "hidden";
+			o.value = ticketKey.mberCd;
+			frmTicketDtl.appendChild(o);
+
+			// 회원ID
+			o = document.createElement("input");
+			o.name = "cp3";
+			o.type = "hidden";
+			o.value = ticketKey.mberId;
+			frmTicketDtl.appendChild(o);
+
+			// 회원이름
+			o = document.createElement("input");
+			o.name = "cp4";
+			o.type = "hidden";
+			o.value = ticketKey.mberNm;
+			frmTicketDtl.appendChild(o);
+
+			// 티켓번호
+			o = document.createElement("input");
+			o.name = "cp5";
+			o.type = "hidden";
+			o.value = tInfo.ticketNo;
+			frmTicketDtl.appendChild(o);
+
+			// 예매번호
+			o = document.createElement("input");
+			o.name = "cp6";
+			o.type = "hidden";
+			o.value = tInfo.orderNum;
+			frmTicketDtl.appendChild(o);
+
+			// 인터파크 회원 코드 정보
+			o = document.createElement("input");
+			o.name = "cp7";
+			o.type = "hidden";
+			o.value = tInfo.interMem;
+			frmTicketDtl.appendChild(o);
+
+			//언어코드
+			o = document.createElement("input");
+			o.name = "lang";
+			o.type = "hidden";
+			o.value = ticketKey.interparkCode.langCode;
+			frmTicketDtl.appendChild(o);
+
+			// 구분키
+			o = document.createElement("input");
+			o.name = "cpk";
+			o.type = "hidden";
+			o.value = ticketKey.mberKey;
+			frmTicketDtl.appendChild(o);
+
+			if(ticketKey.isMobile){
+
+				// 상품코드
+				o = document.createElement("input");
+				o.name = "cp8";
+				o.type = "hidden";
+				o.value = tInfo.goodsCode;
+				frmTicketDtl.appendChild(o);
+
+				// 공연장코드
+				o = document.createElement("input");
+				o.name = "cp9";
+				o.type = "hidden";
+				o.value = tInfo.placeCode;
+				frmTicketDtl.appendChild(o);
+
+				// 고정값
+				o = document.createElement("input");
+				o.name = "SVCBASE";
+				o.type = "hidden";
+				o.value = "PartnerShip";
+				frmTicketDtl.appendChild(o);
+
+				// 고정값
+				o = document.createElement("input");
+				o.name = "tp";
+				o.type = "hidden";
+				o.value = "MYTICKET";
+				frmTicketDtl.appendChild(o);
+
+			}
+
+			try{
+
+				var loc = "";
+				win = window.open(loc,"wndTicketDtl_Global","top=10, left=10, width=900, height=682, scrollbars=yes");
+
+				if(win==null) {
+					alert(ticketMsg("alert.block.popup"));
+				} else {
+					frmTicketDtl.submit();
+					win.focus();
+				}
+
+			} catch(e){
+				alert(ticketMsg("alert.block.popup"));
+			}
+		});
+	}
+}
+
+/*
+ * 	f_getGoodsDate : 인터파크 api 조회용
+ */
+function f_getGoodsDate(param, f_callback){
+
+	$.ajax({
+		type : "post",
+		url: '/comm/interpark/goodsDate',
+		data: param,
+		dataType: 'json',
+		contentType: 'application/json; charset=utf-8',
+		success: function(data) {
+
+			if(data){
+				if (typeof(f_callback) == "function") {
+					f_callback(data);
+		        }
+			}
+
+		},
+		error: function(data, status, err) {
+			//alert("error");
+		}
+	});
+}
+
+
+/*
+ * 	f_getContactKey : 인터파크 연계 키 생성
+ */
+function f_getContactKey(langType, f_callback){
+
+	$.ajax({
+		type : "post",
+		url: '/comm/interpark/ticketContactKey',
+		data : {"langTy" : langType},
+		dataType: 'json',
+		success: function(data) {
+
+			if(data){
+
+				if (typeof(f_callback) == "function") {
+					f_callback(data);
+		        }
+
+			}
+
+		},
+		error: function(data, status, err) {
+		}
+	});
+}
+
+
+/*
+ * 	f_getAmPm : 오전, 오후 체크
+ */
+function f_getAmPm(time)
+{
+	time = String(time);
+	var timeValue;
+	if(parseInt(time.substring(0,2)) < 12){
+		if(GoodsInfo.GetData("langType") == "en")
+			timeValue = time.substring(0,2) + ":" + time.substring(2,4) + " " + ticketMsg("post.view.time.am");
+		else
+			timeValue = ticketMsg("post.view.time.am") + " " + time.substring(0,2) + ":" + time.substring(2,4);
+	}else{
+		if(GoodsInfo.GetData("langType") == "en")
+			timeValue = (parseInt(time.substring(0,2)) - 12) + ":" + time.substring(2,4) + " " + ticketMsg("post.view.time.pm");
+		else
+			timeValue = ticketMsg("post.view.time.pm") + " " + (parseInt(time.substring(0,2)) - 12) + ":" + time.substring(2,4);
+	}
+	return timeValue;
+}
+
+function f_find_adres (args) {
+	var uri = "/comm/popup/zonecode/search?";
+	var config = {
+		  zoneTagtId : ""
+		, postTagtId : ""
+	 	, positionId : ""
+	 	, languageId : ""
+	 	, param_link : "&"
+	};
+	config = $.extend(config, args);
+
+	if (config.languageId == null && config.languageId == undefined && config.languageId == "") {
+		config.languageId = "ko";
+	}
+
+	var params = "";
+	$.each(config, function(k, v) {
+		if ($.trim(v) != "" && k != "param_link") {
+			params += (k + "=" + v + config.param_link);
+		}
+	});
+	params = params.substr(0, (params.length - config.param_link.length));
+
+	var cfg = {
+		target: "find_adres",
+		href: (uri + params),
+		width: 540,
+		height: 600,
+		scrollbars: 1
+	};
+	$.popup(true, cfg);
+}

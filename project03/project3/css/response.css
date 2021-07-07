@@ -1,0 +1,259 @@
+@media screen and (max-width:1260px){
+    .wrap{
+        max-width:100%;
+        height:800px;
+        display:grid;
+    }
+
+    /* header */
+    #header{
+        grid-column:1/-1;
+        height:90px;
+    }
+
+    #header .head-inner{
+        height:90px;
+    }
+
+    #header .head-inner .logo{
+        padding-left:20px;
+    }
+
+    #header .head-inner .logo a{
+        width:191px;
+        height:31px;
+        background-size:191px 31px;
+        margin-top:-7px;
+    }
+
+    #nav .gnb ul li a{
+        font-size:18px;
+        line-height:90px;
+    }
+
+    .right-btn{
+        top:26px;
+        right:20px;
+    }
+
+    /* main slide */
+    #slide .main-txt-wrap{
+        height:800px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox{
+        max-width:840px;
+        margin:0 136px;
+        margin:0 auto;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .main-txt .tit{
+        font-size:44px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .main-txt .tit span{
+        font-size:20px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box .search-inner{
+        width:662px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box .search-inner select,
+    #slide .main-txt-wrap .main-txtBox .search-box #user-search{
+        font-size:18px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box .detail-search{
+        width:160px;
+        font-size:19px;
+        right:0;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dt{
+        font-size:20px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dd .num{
+        font-size:34px;
+    }
+
+    /* footer */
+    #footer .foot-bottom{
+        grid-column:1/-1;
+    }
+
+    #footer .foot-bottom .f-site .f-box .btn-up{
+        min-width:130px;
+        font-size:16px;
+    }
+
+    #footer .foot-bottom .f-info .address{
+        font-size:16px;
+    }
+
+    #footer .foot-bottom .f-info .copy{
+        font-size:15px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    /* header */
+    #header{
+        height:60px;
+    }
+
+    header .head-inner .gnb{
+        display:none;
+    }
+
+    #header .head-inner .logo a{
+        width:172px;
+        height:28px;
+        background-size:172px 28px;
+        margin-top:-19px;
+    }
+
+    .right-btn{
+        display:none;
+    }
+
+    /* main slide */
+    #slide .main-txt-wrap{
+        height:700px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox{
+        /* margin:0 auto; */
+        max-width:760px;
+        padding:200px 20px 0 20px;
+        
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar{
+        height:60px;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar ul li a{
+        line-height:60px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box .search-inner{
+        width:582px;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar ul li a span,
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dd em{
+        font-size:16px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dt{
+        font-size:18px;
+    }
+
+    #slide .main-txt-wrap .scroll-down a{
+        width:50px;
+        height:50px;
+        background-size:50px 50px;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar ul li a span{
+        background-size:30px auto;
+        padding:3px 0 3px 40px;
+        background-position:0 50%;
+    }
+
+    /* footer */
+    #footer .foot-bottom{
+        grid-column:1/-1;
+    }
+}
+
+@media screen and (max-width:830px){
+    #slide .main-txt-wrap .main-txtBox{
+        /* margin:0 auto; */
+        max-width:700px;
+        padding:200px 20px 0 20px;
+    }
+}
+
+@media screen and (max-width:768px){
+    /* main slide */
+    #slide .main-txt-wrap{
+        height:600px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox{
+        padding:130px 20px 0 20px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .main-txt .tit{
+        font-size:30px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .main-txt .tit span{
+        font-size:16px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box{
+        /* border:2px solid #ac8b43; */
+        border-radius:8px;
+    }
+}
+
+@media screen and (max-width:540px){
+    #slide .main-txt-wrap .main-txtBox{
+        width:269px;
+        padding:400px 20px 0 20px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box .detail-search{
+        position:static;
+        display:block;
+        height:50px;
+        width:auto;
+        line-height:50px;
+        margin-top:10px;
+        font-size:17px;
+    }
+
+    #slide .main-txt-wrap .scroll-down a{
+        width:40px;
+        height:40px;
+        background-size:40px 40px;
+        background-position:50% 50%;
+        display:block;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar{
+        height:50px;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar ul li a{
+        line-height:50px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .search-box .search-inner select, 
+    #slide .main-txt-wrap .main-txtBox .search-box #user-search{
+        font-size:16px;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar ul li a span,
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dd em{
+        font-size:13px;
+    }
+
+    #slide .main-txt-wrap .bar-all .search-bar ul li a span{
+        background-size:21px auto;
+        padding:3px 0 3px 28px;
+        background-position:0 50%;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dt{
+        font-size:14px;
+    }
+
+    #slide .main-txt-wrap .main-txtBox .data-num ul li dl dd .num{
+        font-size:20px;
+    }
+}

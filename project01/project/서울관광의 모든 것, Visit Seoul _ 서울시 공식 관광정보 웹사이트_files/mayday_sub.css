@@ -1,0 +1,562 @@
+/* 이벤트페이지 */
+.mayday_video_launching_event p.mayday_event_intro,
+.nct_event p.nct_intro{
+	position:relative;
+}
+	.mayday_event_intro a{
+		display: block;
+		width: 9.5%;
+		height: 6%;
+		left: 29.7%;
+		top: 58.5%;
+		position: absolute;
+	}
+	.mayday_event_intro a.mayday_facebook_channel{
+		left: 39.6%;
+	}
+	.mayday_event_intro a.mayday_twitter_channel{
+		left: 50%;
+	}
+	.mayday_event_intro a.mayday_google_channel{
+		left: 60.4%;
+	}
+	.nct_intro a{
+		display: block;
+		width: 9.5%;
+		height: 9.5%;
+		left: 25.2%;
+		top: 38%;
+		position: absolute;
+	}
+	.nct_intro a.mayday_twitter_channel{
+		left: 35.6%;
+	}
+	.nct_intro a.mayday_google_channel{
+		left: 46%;
+	}
+	.nct_intro a.mayday_in_channel{
+		left: 56.4%;
+	}
+	.nct_intro a.mayday_weibo_channel{
+		left: 66.4%;
+	}
+
+/* 영상페이지 */
+.mayday_video_playSection{
+	float:left;
+	width:502px;
+}
+.mayday_video_rolling_box{
+	float:right;
+	width:162px;
+	background-color: #f2f2f2;
+	padding: 27px 13px 16px;
+	position:relative;
+}
+.mayday_video_wide_rolling_box{display:none;}
+	.mayday_share_hit_section{
+		height:47px;
+		float:left;
+		border-bottom:1px solid #b2b2b2;
+		width:100%;
+	}
+	.mayday_share_hit_section li{
+		height:47px;
+		line-height:47px;
+		float:right;
+		margin-right:18px;
+	}
+	.mayday_share_hit_section li a{
+		background:url(../../assets/images/seoul_video/video_hit_icon.gif) 0 3px no-repeat;
+		padding-left:25px;
+	}
+	.mayday_hBtn img{
+		display:block;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	.mayday_hBtn img.next{
+		top:315px;
+	}
+	.mayday_thumb{
+		margin-bottom:5px;
+	}
+	.mayday_video_explain{
+		float:left;
+		width:100%;
+		margin:25px 0 50px;
+		font-size:14px;
+	}
+	.mayday_video_explain dt{
+		color:#167acc;
+		font-weight:bold;
+		margin-bottom:8px;
+	}
+	.mayday_video_explain dd{
+		color:#555555;
+		font-size:13px;
+		line-height:18px;
+	}
+	.mayday_video_banner_list{
+		float:left;
+		width:100%;
+		border-bottom:1px solid #cccccc;
+		padding-bottom:30px;
+		margin-bottom:30px;
+	}
+	.mayday_video_banner_list li{float:left; margin-top:10px;}
+	.mayday_video_banner_list li:nth-child(2n){float:right;}
+	.mayday_video_banner_list li:nth-child(1), .mayday_video_banner_list li:nth-child(2){margin-top:0;}
+
+/* HOT & BEST 이벤트 */
+.hot_best img{margin-top:-2px;}
+.hb_video_section{
+	width:100%;
+	background:url(../../assets/images/hot_best_event/hot_best_video_bg.jpg) no-repeat;
+	padding:36px 0 0 0;
+	overflow: hidden;
+	height:384px;
+}
+	.hb_video_section dl{
+		float:left;
+		width:49%;
+		text-align:center;
+	}
+	.hb_video_section dl:nth-child(2){
+		float:right;
+	}
+	.hb_video_section dt{
+		margin:18px auto;
+		border:1px solid #60dfff;
+		border-radius:25px;
+		padding:8px 0;
+		width:134px;
+		font-size:18px;
+		color:#60dfff;
+		font-weight:bold;
+		overflow:hidden;
+	}
+	.hb_video_section dl:nth-child(2) dt{
+		color:#ff6c00;
+		border:1px solid #ff6c00;
+	}
+	.hb_video_section dd.video_box{
+		margin:0 auto;
+		width:300px;
+	}
+	.hb_video_section dd{
+		font-size:14px;
+		text-align:center;
+		line-height:20px;
+		color:#c6c6c6;
+	}
+	.hb_video_section dd span{color:#60dfff;}
+	.hb_video_section dl:nth-child(2) dd span{color:#ff6c00;}
+
+/* LA 이벤트 */
+.seoul_LA_event img{margin-top:-2px;}
+.LA_video_section{position:relative;}
+.LA_video_section a.click_here{
+	position:absolute;
+	top:28%;
+	left:auto;
+	right:8%;
+	width:7%;
+	height:5%;
+}
+.LA_video_section .video_box{
+	position:absolute;
+	top:52%;
+	left:50%;
+	transform:translate(-50%, -10%);
+	width:565px;
+	height:303px;
+	border:10px solid #fff;
+}
+.seoul_LA_event .more_link{
+	padding:26px 0 23px 43px;
+	background-color:#22b2d1;
+}
+.seoul_LA_event .more_link li{
+
+	color:#ffff;
+	line-height:21px;
+}
+.seoul_LA_event .more_link li a{
+	text-decoration:underline;
+	color:#fff;
+	font-weight:500;
+}
+.seoul_LA_event .footer_wrap{
+	background-color:#52504e;
+	padding:34px;
+	overflow:hidden;
+}
+.seoul_LA_event .footer_wrap .trip_tickets_terms{margin-top:30px;}
+.seoul_LA_event .footer_wrap .trip_tickets_terms dl{
+	width:97%;
+	height:250px;
+	overflow-y:scroll;
+	padding:10px;
+	background-color:#626160;
+}
+.seoul_LA_event .footer_wrap dt, .seoul_LA_event .footer_wrap .trip_tickets_terms p{
+	font-size:1.1em;
+	font-weight:500;
+	color:#fff;
+	margin-bottom:15px;
+}
+.seoul_LA_event .footer_wrap dd{
+	font-size:0.8em;
+	color:#dbdbdb;
+	line-height:21px;
+	text-indent:-10px;
+	margin-left:10px;
+}
+	
+@media all and (min-width:801px) and (max-width:1100px) {
+	.mayday_video_rolling_box{display:none;}
+	.mayday_video_wide_rolling_box{display:block;}
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:90%;
+		padding:17px 30px;
+		height:80px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:440px; height:80px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:80px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px; width:7%;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer;}
+	.left_arrow img, .right_arrow img{width:82%;}
+	.right_arrow{right:0; left:auto;}
+	.mayday_video_banner_list{width:100%; margin:0 auto 30px auto; float:none; overflow:hidden;}
+	.mayday_video_banner_list li {width:100%;}
+	.mayday_video_banner_list li img{width:100%;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin-top:10px;}
+	.mayday_event_banner img{display:block; margin:0 auto;}
+	
+	.hot_best{width:90%;}
+	.hot_best img{margin-top:-2px;}
+	.hb_video_section dd.video_box{width:100%;}
+	
+	.seoul_LA_event{width: 84.5%;}
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:17%;}
+	.LA_video_section .video_box{
+		top:325px;
+		height:270px !important;
+	}
+	.LA_video_section .video_box{
+		transform: translate(-57%, -10%);
+	}
+	.LA_video_section .video_box iframe{
+		height:270px !important;
+	}
+
+}
+
+@media all and (max-width:900px) {
+	.mayday_video_rolling_box{display:none;}
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+	.mayday_youtube{float:left; width:100%;}
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:91.7%;
+		padding:17px 30px;
+		height:85px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:444px; height:85px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:85px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer;}
+	.right_arrow{right:0; left:auto;}
+	.mayday_video_banner_list{width:100%; margin:0 auto 30px auto; float:none; overflow:hidden;}
+	.mayday_video_banner_list li{width:48%;}
+	.mayday_video_banner_list li img{width:100%;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin-left:20px;}
+	.mayday_event_banner img{display:block; margin:0 auto;}
+
+	.LA_video_section .video_box{top:255px;}
+}
+
+@media all and (min-width:641px) and (max-width:800px) {
+	.mayday_video_rolling_box{display:none;}
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:91.7%;
+		padding:17px 30px;
+		height:105px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:584px; height:105px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:105px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer;}
+	.right_arrow{right:0; left:auto;}
+	.mayday_video_banner_list{width:100%; margin:0 auto 30px auto; float:none; overflow:hidden;}
+	.mayday_video_banner_list li{width:48%;}
+	.mayday_video_banner_list li img{width:100%;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin-left:20px;}
+	.mayday_event_banner img{display:block; margin:0 auto;}
+
+	.hot_best{width:100%;}
+	.hot_best img{margin-top:-2px; width:100%;}
+	.hb_video_section{
+		height:100%; 
+		background-size:cover; 
+		padding-bottom:36px;
+	}
+	.hb_video_section dd.video_box{width:100%;}
+
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{top:25%;}
+	.LA_video_section .video_box{top:280px; height:280px !important;}
+	.LA_video_section .video_box iframe{height:280px !important;}
+}
+
+@media all and (min-width:426px) and (max-width:640px) {
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+	.mayday_video_rolling_box{display:none;}
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:91.7%;
+		padding:17px 30px;
+		height:105px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:584px; height:105px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:105px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer;}
+	.right_arrow{right:0; left:auto;}
+
+	.hot_best{width:100%;}
+	.hot_best img{margin-top:-2px; width:100%;}
+	.hot_best iframe{width:100%;}
+	.hb_video_section{
+		height:100%; 
+		background-size:cover; 
+		padding-bottom:36px;
+	}
+	.hb_video_section dd.video_box{width:100%;}
+
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:8%; top:25%;}
+	.LA_video_section .video_box{
+		top:193px; 
+		height:200px !important;
+		width:90%;
+	}
+	.LA_video_section .video_box iframe{
+		height:200px !important;
+		width:100% !important;
+	}
+}
+@media all and (min-width:551px) and (max-width:600px) {
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:8%; top:25%;}
+	.LA_video_section .video_box{
+		top:195px; 
+		height:195px !important;
+		width:90%;
+	}
+	.LA_video_section .video_box iframe{
+		height:195px !important;
+		width:100% !important;
+	}
+}
+@media all and (min-width:426px) and (max-width:550px) {
+	.mayday_video_banner_list li{width:100%;}
+	.mayday_video_banner_list li img{width:100%;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin:20px 0 0 0;}
+
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:8%;}
+	.LA_video_section .video_box{
+		top:175px; 
+		height:160px !important;
+		width:90%;
+	}
+	.LA_video_section .video_box iframe{
+		height:160px !important;
+		width:100% !important;
+	}
+}
+
+@media all and (min-width:384px) and (max-width:425px) {
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+	.mayday_video_rolling_box{display:none;}
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:85.7%;
+		padding:17px 30px;
+		height:84px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:92%; height:84px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:84px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px; width:7.5%;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer;}
+	.right_arrow{right:0; left:auto;}
+	.left_arrow img, .right_arrow img{width:86%;}
+	.mayday_video_banner_list li {float: left; margin-bottom:15px; width:100%;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin:0;}
+	.mayday_video_banner_list li img{width:100%;}
+
+	.hot_best{width:100%;}
+	.hot_best img{margin-top:-2px; width:100%;}
+	.hot_best iframe{width:100%;}
+	.hot_best dl{width:100%;}
+	.hot_best dl:nth-child(2){margin-top:30px;}
+	.hb_video_section{
+		height:100%; 
+		background-size:cover; 
+		padding-bottom:36px;
+	}
+	.hb_video_section dd.video_box{width:100%;}
+	
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:8%; top:25%;}
+	.LA_video_section .video_box{
+		top:145px; 
+		height:125px !important;
+		width:90%;
+	}
+	.LA_video_section .video_box iframe{
+		height:125px !important;
+		width:100% !important;
+	}
+	.seoul_LA_event .more_link{padding:23px;}
+	.seoul_LA_event .footer_wrap dt{font-size:0.9em;}
+	.seoul_LA_event .footer_wrap dd{font-size:0.7em;}
+	.seoul_LA_event .more_link {font-size:0.7em !important;}
+
+	.seoul_LA_event .footer_wrap ul li {font-size: 0.7em;}
+}
+
+@media all and (min-width:321px) and (max-width:383px) {
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+	.mayday_video_rolling_box{display:none;}
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:82.7%;
+		padding:17px 30px;
+		height:150px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:91%; height:150px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:150px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px; width:13.3%;}
+	#imgList div img{width:100%;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer; background-color:#7e8083; height:100%;}
+	.right_arrow{right:0; left:auto;}
+	.left_arrow img, .right_arrow img{width:100%; padding: 20px 0 0 0;}
+	.mayday_video_banner_list li {float: left; margin-bottom:15px;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin-bottom:0;}
+
+	.hot_best{width:100%;}
+	.hot_best img{margin-top:-2px; width:100%;}
+	.hot_best dl{width:100%;}
+	.hot_best dl:nth-child(2){margin-top:30px;}
+	.hb_video_section{
+		height:100%; 
+		background-size:cover; 
+		padding-bottom:36px;
+	}
+	.hb_video_section dd.video_box{width:100%;}
+
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:8%; top:25%;}
+	.LA_video_section .video_box{
+		top:130px; 
+		height:110px !important;
+		width:90%;
+	}
+	.LA_video_section .video_box iframe{
+		height:110px !important;
+		width:100% !important;
+	}
+	.seoul_LA_event .more_link{padding:23px;}
+	.seoul_LA_event .footer_wrap dt{font-size:0.9em;}
+	.seoul_LA_event .footer_wrap dd{font-size:0.7em;}
+	.seoul_LA_event .footer_wrap ul li {font-size: 0.7em;}
+	.seoul_LA_event .more_link {font-size:0.7em !important;}
+}
+
+@media all and (max-width:320px) {
+	.mayday_video_playSection, .mayday_youtube iframe{width:100%;}
+	.mayday_video_rolling_box{display:none;}
+
+	.mayday_video_wide_rolling_box{
+		display:block;
+		width:82.7%;
+		padding:17px 30px;
+		height:126px;
+		float:left;
+		background-color:#f2f2f2;
+		position:relative;
+		margin-bottom:50px;
+	}
+	#viewArea {position:relative; width:91%; height:126px;overflow:hidden; margin:0 auto;}
+	#imgList {position:absolute; width:2000px; height:126px;overflow:hidden; left:0px; top:0px;}
+	#imgList div {float:left; margin-right:10px; padding:0px; width:13.3%;}
+	#imgList div img{width:85%;}
+	.left_arrow, .right_arrow{display:block; position:absolute; top:0; left:0; cursor:pointer; background-color:#7e8083; height:100%;}
+	.right_arrow{right:0; left:auto;}
+	.left_arrow img, .right_arrow img{width:100%; padding: 20px 0 0 0;}
+	.mayday_video_banner_list li {float: left; margin-bottom:15px;}
+	.mayday_video_banner_list li:nth-child(2n) {float: left; margin-bottom:0;}
+
+	.hot_best{width:100%;}
+	.hot_best img{margin-top:-2px; width:100%;}
+	.hot_best iframe{width:100%;}
+	.hot_best dl{width:100%;}
+	.hot_best dl:nth-child(2){margin-top:30px;}
+	.hb_video_section{
+		height:100%; 
+		background-size:cover; 
+		padding-bottom:36px;
+	}
+	.hb_video_section dd.video_box{width:100%;}
+	
+	.seoul_LA_event img{margin-top:-2px;}
+	.LA_video_section a.click_here{right:8%; top:25%;}
+	.LA_video_section .video_box{
+		top:103px; 
+		height:95px !important;
+		width:90%;
+	}
+	.LA_video_section .video_box iframe{
+		height:95px !important;
+		width:100% !important;
+	}
+	.seoul_LA_event .more_link{padding:23px;}
+	.seoul_LA_event .footer_wrap dt{font-size:0.9em;}
+	.seoul_LA_event .footer_wrap dd{font-size:0.7em;}
+	.seoul_LA_event .footer_wrap ul li {font-size: 0.7em;}
+
+}

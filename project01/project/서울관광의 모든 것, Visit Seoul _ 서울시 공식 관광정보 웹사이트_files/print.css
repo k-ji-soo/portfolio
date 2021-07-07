@@ -1,0 +1,6 @@
+#header,#seoul-common-gnb,#footer,#side,#container #pageheader dl{display:none !important;}
+#container #content{float:none !important;width:800px !important;margin:0 auto !important;}
+#container #pageheader .holder{max-width:800px;}
+.wrapper footer .footer-inner,
+.service-menu-wrap,.livere-wrap{display:none}
+.cnt-locationinfo{display:block;}

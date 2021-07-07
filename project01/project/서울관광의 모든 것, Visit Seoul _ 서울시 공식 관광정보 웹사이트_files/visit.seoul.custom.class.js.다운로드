@@ -1,0 +1,39 @@
+/*
+	@filename	: visit.seoul.custom.class.js
+    @filedesc	: javascript function for visit seoul
+	@date		: 2015.11.12
+	@author		: Jinwoo.Yuk
+*/
+
+var console = window.console || {log:function(){},dir:function(){},error:function(){},warn:function(){}};
+
+String.prototype.replaceAll = function(search, replacement) {
+	var target = this;
+	return target.split(search).join(replacement).trim();
+};
+
+function StringBuffer() {
+    this.buffer = [];
+}
+
+StringBuffer.prototype.append = function append(string) {
+    this.buffer.push(string);
+    return this;
+};
+
+StringBuffer.prototype.toString = function toString() {
+    return this.buffer.join("");
+};
+
+jQuery.fn.outerHTML = function() {
+	var el = $(this);
+	if( !el[0] ) return "";
+
+	if (el[0].outerHTML) {
+		return el[0].outerHTML;
+	} else {
+		var content = el.clone().wrapAll('<p/>').parent().html();
+		//el.unwrap();
+		return content;
+	}
+};
